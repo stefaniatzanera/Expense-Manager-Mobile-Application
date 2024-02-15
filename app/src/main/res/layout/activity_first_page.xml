@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_bck"
+    tools:context=".FirstPageActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userimage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/default_prof_im"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        />
+
+    <TextView
+        android:id="@+id/hello_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hellotxt"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintLeft_toRightOf="@id/userimage"
+        app:layout_constraintTop_toTopOf="@id/userimage"
+        app:layout_constraintBottom_toBottomOf="@id/userimage"/>
+
+    <ImageButton
+        android:id="@+id/settingsbtn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/settings"
+        android:background="@null"
+        app:layout_constraintLeft_toRightOf="@id/hello_txt"
+        app:layout_constraintTop_toTopOf="@id/hello_txt"
+        app:layout_constraintBottom_toBottomOf="@id/hello_txt"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="140dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/addbtn"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:background="@drawable/roundbtn"
+        android:padding="6dp"
+        android:text="@string/add"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintTop_toBottomOf="@id/money"
+        app:layout_constraintRight_toRightOf="@id/money" />
+
+    <Button
+        android:id="@+id/subtractionbtn"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:background="@drawable/roundbtn"
+        android:padding="6dp"
+        android:text="@string/subtraction"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintTop_toBottomOf="@id/money"
+        app:layout_constraintLeft_toLeftOf="@id/money"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

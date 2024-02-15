@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Expense Manager Mobile Application</string>
+    <!--- main_Activity-->
+    <string name="start">START</string>
+    <string name="add_card">Add Card</string>
+    <string name="add_cash">Add Cash</string>
+    <string name="help">Help</string>
+    <!---add_card_Activity-->
+    <string name="title_new_card">Create  new card</string>
+    <string name="name_of_bank_or_card">Name of bank/card</string>
+    <string name="amount_of_card">Amount</string>
+    <string name="create_card_btn">Create</string>
+    <string name="currency_title">Currency</string>
+    <string-array name="Currencies">
+        <item>Please Select</item>
+        <item>Euro €</item>
+        <item>US dollar $</item>
+        <item>Canadian dollar $</item>
+        <item>Japanese yen \uFFE5</item>
+        <item>Chinese renminbi \uFFE5</item>
+    </string-array>
+                        <!---alert_dialog-->
+    <string name="create_another_card">Create another card</string>
+    <string name="create_a_wallet">Create a wallet</string>
+    <!---add_card_Activity & add_cash_Activity-->
+    <string name="choose_action">Choose action</string>
+    <string name="continue_with_app">Continue with app</string>
+    <!--- add_cash_Activity-->
+    <string name="title_new_wallet">Create wallet for cash</string>
+    <string name="name_of_wallet">Name of wallet</string>
+    <string name="amount_of_wallet">Amount</string>
+    <string name="create_wallet_btn">Create</string>
+                        <!---alert_dialog-->
+    <string name="create_another_wallet">Create another wallet</string>
+    <string name="create_a_card">Create a card</string>
+    <!---help_Activity-->
+    <string name="helptitle">Help</string>
+    <string name="helptxt">The e-Portofoli app is an application aimed at helping the user manage their finances.
+        -By pressing the "Add card" button, you are given the possibility to add a bank card and the amount you have available on it.
+        -By pressing the "Add cash" button, you can add a virtual wallet and name it and the amount you have available.</string>
+    <!---First-Activity-->
+    <string name="hellotxt">Hello user!</string>
+    <!---First-Page-->
+    <string name="add">Add</string>
+    <string name="subtraction">Subtraction</string>
+</resources>
