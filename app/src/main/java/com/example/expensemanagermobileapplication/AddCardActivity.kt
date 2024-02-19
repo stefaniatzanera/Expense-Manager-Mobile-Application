@@ -72,7 +72,7 @@ class AddCardActivity : AppCompatActivity() {
                 putInt("bankID", sharedPref.getInt("bankID", 0) + 1)
                 putString("name_of_bank_" + sharedPref.getInt("bankID", 0), nameOfBank)
                 putFloat("amount_in_bank_" + sharedPref.getInt("bankID", 0), amountInBank.toFloat())
-                putString("currency_" + sharedPref.getInt("bankID", 0), selectedCurrency)
+                putString("currency_bank_" + sharedPref.getInt("bankID", 0), selectedCurrency)
             }
             editor.apply()
 

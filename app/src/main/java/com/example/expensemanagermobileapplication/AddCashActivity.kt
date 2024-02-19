@@ -71,7 +71,7 @@ class AddCashActivity : AppCompatActivity() {
                 putInt("walletID", sharedPref.getInt("walletID", 0) + 1)
                 putString("name_of_wallet_" + sharedPref.getInt("walletID", 0), nameOfWallet)
                 putFloat("amount_in_wallet_" + sharedPref.getInt("walletID", 0), amountInWallet.toFloat())
-                putString("currency_" + sharedPref.getInt("walletID", 0), selectedCurrency)
+                putString("currency_wallet_" + sharedPref.getInt("walletID", 0), selectedCurrency)
             }
             editor.apply()
 

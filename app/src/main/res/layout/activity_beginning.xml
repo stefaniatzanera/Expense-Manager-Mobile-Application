@@ -51,4 +51,18 @@
         app:layout_constraintTop_toBottomOf="@id/addcashbtn"
         app:layout_constraintLeft_toLeftOf="@id/addcashbtn"
         app:layout_constraintRight_toRightOf="@id/addcashbtn"/>
+
+    <Button
+        android:id="@+id/userprofile"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundbtn"
+        android:padding="6dp"
+        android:text="Userprofile"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@id/helpbtn"
+        app:layout_constraintLeft_toLeftOf="@id/helpbtn"
+        app:layout_constraintRight_toRightOf="@id/helpbtn"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
