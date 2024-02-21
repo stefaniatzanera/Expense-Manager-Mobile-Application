@@ -66,20 +66,18 @@ class AddCardActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
+            val id = sharedPref.getInt("bankID", 0) + 1
 
             editor.apply {
-                putInt("bankID", sharedPref.getInt("bankID", 0) + 1)
-                putString("name_of_bank_" + sharedPref.getInt("bankID", 0), nameOfBank)
-                putFloat("amount_in_bank_" + sharedPref.getInt("bankID", 0), amountInBank.toFloat())
-                putString("currency_bank_" + sharedPref.getInt("bankID", 0), selectedCurrency)
+                putInt("bankID", id)
+                putString("name_of_bank_$id", nameOfBank)
+                putFloat("amount_in_bank_$id", amountInBank.toFloat())
+                putString("currency_bank_$id", selectedCurrency)
             }
             editor.apply()
 
             Toast.makeText(this@AddCardActivity, "Card added successfully!", Toast.LENGTH_LONG)
                 .show()
-            //this@AddCardActivity.finish()
-
             showCreateCardDialog()
         }
     }

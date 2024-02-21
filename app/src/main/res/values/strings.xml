@@ -39,10 +39,14 @@
         -By pressing the "Add card" button, you are given the possibility to add a bank card and the amount you have available on it.
         -By pressing the "Add cash" button, you can add a virtual wallet and name it and the amount you have available.</string>
     <!---First-Activity-->
-    <string name="hellotxt">Hello user!</string>
+    <string name="hellotxt">Hello %s!</string>
     <!---First-Page-->
     <string name="add">Add</string>
     <string name="subtraction">Subtraction</string>
+    <!---layout_for_alert_dialog_newname-->
+    <string name="newname">Enter a name</string>
+    <string name="okbtn">OK</string>
+    <string name="cancelbtn">Cancel</string>
     <!---Add-Btn-Activity-->
     <string name="addbtntitle">Add money</string>
     <!---Substraction-Btn-Activity-->
