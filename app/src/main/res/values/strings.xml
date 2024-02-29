@@ -51,4 +51,6 @@
     <string name="addbtntitle">Add money</string>
     <!---Substraction-Btn-Activity-->
     <string name="substractionbtntitle">Substraction money</string>
+    <!---Settings-Activity-->
+    <string name="infobtn">Info</string>
 </resources>

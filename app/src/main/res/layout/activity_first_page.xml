@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_bck"
-    tools:context=".FirstPageActivity">
+    tools:context=".activities.FirstPageActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userimage"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/default_prof_im"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"

@@ -1,7 +1,6 @@
-package com.example.expensemanagermobileapplication
+package com.example.expensemanagermobileapplication.activities
 
 import android.app.Dialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -10,8 +9,8 @@ import android.view.View
 import android.view.Window
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.expensemanagermobileapplication.R
 import com.example.expensemanagermobileapplication.databinding.ActivityAddCashBinding
-import java.util.Currency
 
 class AddCashActivity : AppCompatActivity() {
     val nameofwallet by lazy { findViewById<EditText>(R.id.nameofwallet) }

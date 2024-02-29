@@ -1,10 +1,10 @@
-package com.example.expensemanagermobileapplication
+package com.example.expensemanagermobileapplication.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.expensemanagermobileapplication.R
 
 class BeginningActivity : AppCompatActivity() {
     private val addCardButton by lazy { findViewById<Button>(R.id.addcardbtn)}

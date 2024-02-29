@@ -1,3 +1,3 @@
-package com.example.expensemanagermobileapplication
+package com.example.expensemanagermobileapplication.dataClass
 
 data class WalletInfos(val wallet_name: String, val w_amount: Float, val w_currency: String)
