@@ -40,6 +40,7 @@ class FirstPageActivity : AppCompatActivity() {
     lateinit var adapter: BankAdapter
     private val addBtn by lazy { findViewById<Button>(R.id.addbtn)}
     private val substractionBtn by lazy { findViewById<Button>(R.id.subtractionbtn)}
+    private val data by lazy { findViewById<RecyclerView>(R.id.money) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,10 +48,11 @@ class FirstPageActivity : AppCompatActivity() {
         setContentView(binding.root)
         recyclerView = binding.money
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = BankAdapter()
+        adapter = BankAdapter(this)
         recyclerView.adapter = adapter
         sp = getSharedPreferences("userOptions", MODE_PRIVATE)
 
+        //User's image
         val replacedimage = sp.getBoolean("replacedImage",false)
         if(!replacedimage){
             userimage.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.default_prof_im))
@@ -73,7 +75,7 @@ class FirstPageActivity : AppCompatActivity() {
         for (b in 1..b_id) {
             val bankName = sp.getString("name_of_bank_$b", "null")
             val bankAmount = sp.getFloat("amount_in_bank_$b", 0F)
-            val bankCur = sp.getString("currency_bank_$b", "null")?.last().toString()
+            val bankCur = sp.getString("currency_bank_$b", "null")!!
             val bankdata = BankInfos(bankName!!, bankAmount, bankCur)
             adapter.addInfo(bankdata)
         }
@@ -82,7 +84,7 @@ class FirstPageActivity : AppCompatActivity() {
         for (w in 1..w_id) {
             val walletName = sp.getString("name_of_wallet_$w", "null")
             val walletAmount = sp.getFloat("amount_in_wallet_$w", 0F)
-            val walletCur = sp.getString("currency_wallet_$w", "null")?.last().toString()
+            val walletCur = sp.getString("currency_wallet_$w", "null")!!
             val walletdata = WalletInfos(walletName!!, walletAmount, walletCur)
             adapter.addInfo(walletdata)
         }
@@ -90,6 +92,7 @@ class FirstPageActivity : AppCompatActivity() {
         //change the name of user
         newnamebtn.text = getString(R.string.hellotxt, sp.getString("userName", "User"))
         val dialog = Dialog(this)
+        //new name for user
         newnamebtn.setOnClickListener {
             dialog.setContentView(R.layout.layout_for_alert_dialog_newname)
             // Set the layout parameters for the dialog window
@@ -129,6 +132,7 @@ class FirstPageActivity : AppCompatActivity() {
             val y = Intent(this, SubstractionBtnActivity::class.java)
             startActivity(y)
         }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

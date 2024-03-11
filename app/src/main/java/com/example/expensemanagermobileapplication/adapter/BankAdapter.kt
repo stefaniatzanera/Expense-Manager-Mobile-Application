@@ -1,17 +1,26 @@
 package com.example.expensemanagermobileapplication.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.expensemanagermobileapplication.dataClass.BankInfos
 import com.example.expensemanagermobileapplication.dataClass.WalletInfos
 import com.example.expensemanagermobileapplication.R
+import com.example.expensemanagermobileapplication.activities.DataActivity
 
-class BankAdapter: RecyclerView.Adapter<BankAdapter.ViewHolder>() {
+class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder>() {
     //private val bankList: MutableList<BankInfos> = mutableListOf()
     private val infoList: MutableList<Any> = mutableListOf()
+    private var context: Context? = null
+
+    init {
+        this.context = context
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_for_user_data, parent, false)
@@ -24,7 +33,7 @@ class BankAdapter: RecyclerView.Adapter<BankAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val info = infoList[position]
-        holder.bind(info)
+        holder.bind(info, position)
     }
 //    override fun getItemCount(): Int {
 //        return bankList.size
@@ -60,17 +69,31 @@ class BankAdapter: RecyclerView.Adapter<BankAdapter.ViewHolder>() {
         val amountTextView by lazy { itemView.findViewById<TextView>(R.id.amount)}
         val currencyTextView by lazy { itemView.findViewById<TextView>(R.id.currency)}
 
-        fun bind(info: Any) {
+        fun bind(info: Any, position: Int) {
+            var currencyString = ""
             if(info is BankInfos) {
                 //val bank = info as BankInfos
+                currencyString = info.b_currency
                 nameTextView.text = info.bank_name
                 amountTextView.text = info.b_amount.toString()
-                currencyTextView.text = info.b_currency
+                currencyTextView.text = currencyString.last().toString()
             }
             else if (info is WalletInfos) {
+                currencyString = info.w_currency
                 nameTextView.text = info.wallet_name
                 amountTextView.text = info.w_amount.toString()
-                currencyTextView.text = info.w_currency
+                currencyTextView.text = currencyString.last().toString()
+            }
+
+            itemView.setOnClickListener {
+                val intent = Intent(context, DataActivity::class.java).apply {
+                    putExtra("name", nameTextView.text)
+                    putExtra("amount", amountTextView.text)
+                    putExtra("currency", currencyString)
+                }
+
+                // Start the second activity with the Intent
+                context?.startActivity(intent)
             }
         }
     }

@@ -42,7 +42,7 @@
     <string name="hellotxt">Hello %s!</string>
     <!---First-Page-->
     <string name="add">Add</string>
-    <string name="subtraction">Subtraction</string>
+    <string name="subtract">Subtract</string>
     <!---layout_for_alert_dialog_newname-->
     <string name="newname">Enter a name</string>
     <string name="okbtn">OK</string>
