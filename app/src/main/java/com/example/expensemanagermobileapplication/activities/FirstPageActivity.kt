@@ -38,8 +38,6 @@ class FirstPageActivity : AppCompatActivity() {
     lateinit var binding: ActivityFirstPageBinding
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: BankAdapter
-    private val addBtn by lazy { findViewById<Button>(R.id.addbtn)}
-    private val substractionBtn by lazy { findViewById<Button>(R.id.subtractionbtn)}
     private val data by lazy { findViewById<RecyclerView>(R.id.money) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,7 +74,7 @@ class FirstPageActivity : AppCompatActivity() {
             val bankName = sp.getString("name_of_bank_$b", "null")
             val bankAmount = sp.getFloat("amount_in_bank_$b", 0F)
             val bankCur = sp.getString("currency_bank_$b", "null")!!
-            val bankdata = BankInfos(bankName!!, bankAmount, bankCur)
+            val bankdata = BankInfos(bankName!!, bankAmount, bankCur, "name_of_bank_$b")
             adapter.addInfo(bankdata)
         }
 
@@ -85,7 +83,7 @@ class FirstPageActivity : AppCompatActivity() {
             val walletName = sp.getString("name_of_wallet_$w", "null")
             val walletAmount = sp.getFloat("amount_in_wallet_$w", 0F)
             val walletCur = sp.getString("currency_wallet_$w", "null")!!
-            val walletdata = WalletInfos(walletName!!, walletAmount, walletCur)
+            val walletdata = WalletInfos(walletName!!, walletAmount, walletCur, "name_of_wallet_$w")
             adapter.addInfo(walletdata)
         }
 
@@ -123,15 +121,6 @@ class FirstPageActivity : AppCompatActivity() {
             startActivity(y)
         }
 
-        //Buttons add & substraction money
-        addBtn.setOnClickListener {
-            val x = Intent(this, AddBtnActivity::class.java)
-            startActivity(x)
-        }
-        substractionBtn.setOnClickListener {
-            val y = Intent(this, SubstractionBtnActivity::class.java)
-            startActivity(y)
-        }
 
     }
 

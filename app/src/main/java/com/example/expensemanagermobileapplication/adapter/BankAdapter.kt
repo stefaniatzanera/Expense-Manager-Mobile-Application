@@ -2,9 +2,12 @@ package com.example.expensemanagermobileapplication.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -71,15 +74,18 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
 
         fun bind(info: Any, position: Int) {
             var currencyString = ""
+            var keyString = ""
             if(info is BankInfos) {
                 //val bank = info as BankInfos
                 currencyString = info.b_currency
+                keyString = info.key
                 nameTextView.text = info.bank_name
                 amountTextView.text = info.b_amount.toString()
                 currencyTextView.text = currencyString.last().toString()
             }
             else if (info is WalletInfos) {
                 currencyString = info.w_currency
+                keyString = info.key
                 nameTextView.text = info.wallet_name
                 amountTextView.text = info.w_amount.toString()
                 currencyTextView.text = currencyString.last().toString()
@@ -90,6 +96,7 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
                     putExtra("name", nameTextView.text)
                     putExtra("amount", amountTextView.text)
                     putExtra("currency", currencyString)
+                    putExtra("key", keyString)
                 }
 
                 // Start the second activity with the Intent
