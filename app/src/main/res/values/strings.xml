@@ -48,9 +48,13 @@
     <string name="okbtn">OK</string>
     <string name="cancelbtn">Cancel</string>
     <!---Add-Btn-Activity-->
-    <string name="addbtntitle">Add money</string>
+    <string name="addbtntitle">Add money in: %s</string>
     <!---Substraction-Btn-Activity-->
-    <string name="substractionbtntitle">Substraction money</string>
+    <string name="substractionbtntitle">Substract money from: %s</string>
     <!---Settings-Activity-->
     <string name="infobtn">Info</string>
+    <!---layout_for_alert_dialog_add_manual_amount-->
+    <string name="enteranamount">Enter an amount</string>
+    <string name="availableamount">The available amount: %s</string>
+    <string name="currency">%s</string>
 </resources>

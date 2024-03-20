@@ -55,17 +55,6 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
         infoList.add(info)
         notifyDataSetChanged()
     }
-//    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val nameTextView by lazy { itemView.findViewById<TextView>(R.id.name)}
-//        val amountTextView by lazy { itemView.findViewById<TextView>(R.id.amount)}
-//        val currencyTextView by lazy { itemView.findViewById<TextView>(R.id.currency)}
-//
-//        fun bind(bank: BankInfos) {
-//            nameTextView.text = bank.bank_name
-//            amountTextView.text = bank.b_amount.toString()
-//            currencyTextView.text = bank.b_currency
-//        }
-//    }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView by lazy { itemView.findViewById<TextView>(R.id.name)}
