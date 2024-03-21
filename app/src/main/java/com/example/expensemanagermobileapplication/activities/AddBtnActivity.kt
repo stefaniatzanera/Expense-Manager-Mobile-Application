@@ -6,10 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import com.example.expensemanagermobileapplication.R
 class AddBtnActivity : AppCompatActivity() {
     private val title by lazy { findViewById<TextView>(R.id.addbtntitle) }
@@ -23,7 +20,7 @@ class AddBtnActivity : AppCompatActivity() {
 
         val name = intent.getStringExtra("name")
         title.text = getString(R.string.addbtntitle, name)
-        val amount = intent.getStringExtra("amount")
+        val amount = intent.getFloatExtra("amount", 0f)
         val currency = intent.getStringExtra("currency")
         val keyString = intent.getStringExtra("key")!!
 
@@ -35,20 +32,20 @@ class AddBtnActivity : AppCompatActivity() {
 
             val amountofdata = dialog.findViewById<TextView>(R.id.availableamount)
             val currencydata = dialog.findViewById<TextView>(R.id.cur)
-            amountofdata.text = getString(R.string.availableamount, amount)
+            amountofdata.text = getString(R.string.availableamount, amount.toString())
             currencydata.text = getString(R.string.currency,currency)
 
-            val okaybtn by lazy { dialog.findViewById<Button>(R.id.okbtn) }
-            val cancelbtn by lazy { dialog.findViewById<Button>(R.id.cancelbtn) }
+            val okaybtn = dialog.findViewById<Button>(R.id.add)
+            val cancelbtn = dialog.findViewById<Button>(R.id.cancelbtn)
 
-            addbtn.setOnClickListener {
+            okaybtn.setOnClickListener {
                 val enteranamount = dialog.findViewById<EditText>(R.id.enteranamount)
                 val enteredamount = enteranamount.text.toString() // the amount which user entered
-                val availableamount = dialog.findViewById<TextView>(R.id.availableamount)
-                availableamount.text = getString(R.string.availableamount, amount)
-                val nameofcurrency = dialog.findViewById<TextView>(R.id.cur)
-                nameofcurrency.text = getString(R.string.currency,currencydata)
-
+                amountofdata.text = getString(R.string.availableamount, amount.toString())
+                currencydata.text = getString(R.string.currency,currencydata)
+                val res = addtheamount(enteredamount.toFloat(),amount)
+                Toast.makeText(this@AddBtnActivity, "result = $res", Toast.LENGTH_LONG).show()
+                dialog.dismiss()
             }
             cancelbtn.setOnClickListener {
                 dialog.dismiss()
