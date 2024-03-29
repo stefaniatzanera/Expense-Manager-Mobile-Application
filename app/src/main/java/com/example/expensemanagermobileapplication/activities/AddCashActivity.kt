@@ -16,7 +16,7 @@ class AddCashActivity : AppCompatActivity() {
     val nameofwallet by lazy { findViewById<EditText>(R.id.nameofwallet) }
     val amountofwallet by lazy { findViewById<EditText>(R.id.amounttxtplc) }
     val createbtn by lazy { findViewById<Button>(R.id.createbtn) }
-    val spinner by lazy { findViewById<Spinner>(R.id.arrow) }
+    val spinner by lazy { findViewById<Spinner>(R.id.currenciesoptions) }
     lateinit var binding: ActivityAddCashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

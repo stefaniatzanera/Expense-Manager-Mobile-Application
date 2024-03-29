@@ -10,11 +10,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.webkit.MimeTypeMap
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +24,7 @@ import com.example.expensemanagermobileapplication.adapter.BankAdapter
 import com.example.expensemanagermobileapplication.dataClass.BankInfos
 import com.example.expensemanagermobileapplication.dataClass.WalletInfos
 import com.example.expensemanagermobileapplication.databinding.ActivityFirstPageBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.File
 import java.io.FileOutputStream
@@ -35,10 +36,21 @@ class FirstPageActivity : AppCompatActivity() {
     private lateinit var sp: SharedPreferences
     private val newnamebtn by lazy { findViewById<TextView>(R.id.hello_txt) }
     private val settingsbtn by lazy { findViewById<ImageView>(R.id.settingsbtn)}
+    private val actionsbtn by lazy { findViewById<ImageButton>(R.id.actionsbtn) }
     lateinit var binding: ActivityFirstPageBinding
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: BankAdapter
     private val data by lazy { findViewById<RecyclerView>(R.id.money) }
+
+    private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_animation) }
+    private val rotateClosed: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_closed_animation) }
+    private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_animation) }
+    private val toBottom: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_animation) }
+    private var clicked = false
+    private val actions_btn by lazy { findViewById<FloatingActionButton>(R.id.actionsbtn) }
+    private val add_card_btn by lazy { findViewById<FloatingActionButton>(R.id.addcardaction) }
+    private val add_wallet_btn by lazy { findViewById<FloatingActionButton>(R.id.addcashaction) }
+    private val delete_btn by lazy { findViewById<FloatingActionButton>(R.id.deleteaction) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,7 +86,7 @@ class FirstPageActivity : AppCompatActivity() {
             val bankName = sp.getString("name_of_bank_$b", "null")
             val bankAmount = sp.getFloat("amount_in_bank_$b", 0F)
             val bankCur = sp.getString("currency_bank_$b", "null")!!
-            val bankdata = BankInfos(bankName!!, bankAmount, bankCur, "name_of_bank_$b")
+            val bankdata = BankInfos(bankName!!, bankAmount, bankCur, "name_of_bank_$b","feature")
             adapter.addInfo(bankdata)
         }
 
@@ -83,7 +95,7 @@ class FirstPageActivity : AppCompatActivity() {
             val walletName = sp.getString("name_of_wallet_$w", "null")
             val walletAmount = sp.getFloat("amount_in_wallet_$w", 0F)
             val walletCur = sp.getString("currency_wallet_$w", "null")!!
-            val walletdata = WalletInfos(walletName!!, walletAmount, walletCur, "name_of_wallet_$w")
+            val walletdata = WalletInfos(walletName!!, walletAmount, walletCur, "name_of_wallet_$w","feature")
             adapter.addInfo(walletdata)
         }
 
@@ -121,7 +133,38 @@ class FirstPageActivity : AppCompatActivity() {
             startActivity(y)
         }
 
+        actions_btn.setOnClickListener{
+            onAddButtonClicked()
+        }
 
+        add_card_btn.setOnClickListener{
+            val card = Intent(this, AddCardActivity::class.java)
+            startActivity(card)
+        }
+
+        add_wallet_btn.setOnClickListener{
+            val wallet = Intent(this, AddCashActivity::class.java)
+            startActivity(wallet)
+        }
+
+        delete_btn.setOnClickListener {
+            dialog.setContentView(R.layout.layout_for_delete)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val deletebtn = dialog.findViewById<Button>(R.id.delete)
+            val cancelbtn = dialog.findViewById<Button>(R.id.cancelbtn)
+
+            deletebtn.setOnClickListener {
+
+                dialog.dismiss()
+            }
+            cancelbtn.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.setCancelable(true)
+            dialog.show()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -149,4 +192,46 @@ class FirstPageActivity : AppCompatActivity() {
             userimage.setImageURI(selectedImageUri)
         }
     }
+    //Functions for actions buttons
+    private fun onAddButtonClicked(){
+        setVisibility(clicked)
+        setAnimation(clicked)
+//        setClickable(clicked)
+        clicked = !clicked
+    }
+    private fun setVisibility(clicked: Boolean){
+        if(!clicked){
+            add_card_btn.visibility = View.VISIBLE
+            add_wallet_btn.visibility = View.VISIBLE
+            delete_btn.visibility = View.VISIBLE
+        }else{
+            add_card_btn.visibility = View.INVISIBLE
+            add_wallet_btn.visibility = View.INVISIBLE
+            delete_btn.visibility = View.INVISIBLE
+        }
+    }
+    private fun setAnimation(clicked: Boolean){
+        if(!clicked){
+            add_card_btn.startAnimation(fromBottom)
+            add_wallet_btn.startAnimation(fromBottom)
+            delete_btn.startAnimation(fromBottom)
+            actions_btn.startAnimation(rotateOpen)
+        }else{
+            add_card_btn.startAnimation(toBottom)
+            add_wallet_btn.startAnimation(toBottom)
+            delete_btn.startAnimation(toBottom)
+            actions_btn.startAnimation(rotateClosed)
+        }
+    }
+//    private fun setClickable(clicked: Boolean){
+//        if(!clicked){
+//            add_card_btn.isClickable = false
+//            add_wallet_btn.isClickable = false
+//            delete_btn.isClickable = false
+//        }else{
+//            add_card_btn.isClickable = true
+//            add_wallet_btn.isClickable = true
+//            delete_btn.isClickable = true
+//        }
+//    }
 }

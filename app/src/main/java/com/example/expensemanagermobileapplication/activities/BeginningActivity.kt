@@ -10,7 +10,6 @@ class BeginningActivity : AppCompatActivity() {
     private val addCardButton by lazy { findViewById<Button>(R.id.addcardbtn)}
     private val addCashButton by lazy { findViewById<Button>(R.id.addcashbtn)}
     private val helpButton by lazy { findViewById<Button>(R.id.helpbtn)}
-    private val userprofileButton by lazy { findViewById<Button>(R.id.userprofile)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +28,6 @@ class BeginningActivity : AppCompatActivity() {
         helpButton.setOnClickListener{
             val z = Intent(this, HelpActivity::class.java)
             startActivity(z)
-        }
-
-        userprofileButton.setOnClickListener{
-            val w = Intent(this, FirstPageActivity::class.java)
-            startActivity(w)
         }
     }
 }

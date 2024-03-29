@@ -64,8 +64,10 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
         fun bind(info: Any, position: Int) {
             var currencyString = ""
             var keyString = ""
+            var feature = ""
             if(info is BankInfos) {
                 //val bank = info as BankInfos
+                feature = "c"
                 currencyString = info.b_currency
                 keyString = info.key
                 nameTextView.text = info.bank_name
@@ -73,6 +75,7 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
                 currencyTextView.text = currencyString.last().toString()
             }
             else if (info is WalletInfos) {
+                feature = "w"
                 currencyString = info.w_currency
                 keyString = info.key
                 nameTextView.text = info.wallet_name
@@ -86,6 +89,7 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
                     putExtra("amount", amountTextView.text)
                     putExtra("currency", currencyString)
                     putExtra("key", keyString)
+                    putExtra("feature", feature)
                 }
 
                 // Start the second activity with the Intent

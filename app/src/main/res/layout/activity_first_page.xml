@@ -31,6 +31,21 @@
         app:layout_constraintTop_toTopOf="@id/userimage"
         app:layout_constraintBottom_toBottomOf="@id/userimage"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/english"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="@+id/settingsbtn"
+        app:layout_constraintLeft_toRightOf="@id/hello_txt"
+        app:layout_constraintTop_toTopOf="@id/hello_txt"
+        app:layout_constraintBottom_toBottomOf="@id/hello_txt"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="140dp"
+        android:padding="20dp"
+    />
+
     <ImageButton
         android:id="@+id/settingsbtn"
         android:layout_width="80dp"
@@ -54,4 +69,58 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionsbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:srcCompat="@drawable/actions"
+        android:backgroundTint="@color/colors_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addcardaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/create_btn"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/actionsbtn"
+        app:layout_constraintEnd_toEndOf="@+id/actionsbtn"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/card" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addcashaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/create_btn"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/addcardaction"
+        app:layout_constraintEnd_toEndOf="@+id/addcardaction"
+        app:srcCompat="@drawable/cash" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/addcashaction"
+        app:layout_constraintEnd_toEndOf="@+id/addcashaction"
+        app:srcCompat="@drawable/delete" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

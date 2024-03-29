@@ -16,7 +16,7 @@ class AddCardActivity : AppCompatActivity() {
     val nameofbankcard by lazy { findViewById<EditText>(R.id.nameofbankcardtxtplc) }
     val amountofbankcard by lazy { findViewById<EditText>(R.id.amounttxtplc) }
     val createbtn by lazy { findViewById<Button>(R.id.createbtn) }
-    val spinner by lazy { findViewById<Spinner>(R.id.arrow) }
+    val spinner by lazy { findViewById<Spinner>(R.id.currenciesoptions) }
     lateinit var binding: ActivityAddCardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +84,6 @@ class AddCardActivity : AppCompatActivity() {
 
     private fun showCreateCardDialog() {
         val dialog = Dialog(this)
-        //val alertDialogBuilder = AlertDialog.Builder(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.layout_for_alert_dialog)
@@ -97,7 +96,6 @@ class AddCardActivity : AppCompatActivity() {
         btncreateanothercard.setOnClickListener{
             nameofbankcard.text.clear()
                     amountofbankcard.text.clear()
-
                     dialog.dismiss()
         }
 
@@ -112,30 +110,5 @@ class AddCardActivity : AppCompatActivity() {
         }
 
         dialog.show()
-
-//        alertDialogBuilder.setItems(optionsArray) {
-//            dialogInterface: DialogInterface, which: Int ->
-//            when (which) {
-//                0 -> {
-//                    nameofbankcard.text.clear()
-//                    amountofbankcard.text.clear()
-//                    spinner.setPromptId(0)
-//
-//                    dialogInterface.dismiss()
-//                }
-//                1 -> {
-//                    val intent = Intent(this, AddCashActivity::class.java)
-//                    startActivity(intent)
-//                }
-//                2 -> {
-//                    val intent = Intent(this, FirstPageActivity::class.java)
-//                    startActivity(intent)
-//                }
-//            }
-//            dialogInterface.dismiss()
-//        }
-//
-//        alertDialogBuilder.setCancelable(false)
-//        alertDialogBuilder.create().show()
-        }
+    }
 }

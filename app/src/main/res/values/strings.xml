@@ -1,18 +1,18 @@
 <resources>
-    <string name="app_name">Expense Manager Mobile Application</string>
+    <string name="app_name" translatable="false">Expense Manager Mobile Application</string>
     <!--- main_Activity-->
-    <string name="start">START</string>
-    <string name="add_card">Add Card</string>
-    <string name="add_cash">Add Cash</string>
-    <string name="help">Help</string>
+    <string name="start" translatable="false">START</string>
+    <string name="add_card" translatable="false">Add Card</string>
+    <string name="add_cash" translatable="false">Add Cash</string>
+    <string name="help" translatable="false">Help</string>
     <!---add_card_Activity-->
-    <string name="title_new_card">Create  new card</string>
-    <string name="name_of_bank_or_card">Name of bank/card</string>
-    <string name="amount_of_card">Amount</string>
+    <string name="title_new_card" translatable="false">Create  new card</string>
+    <string name="name_of_bank_or_card" translatable="false">Name of bank/card</string>
+    <string name="amount_of_card" translatable="false">Amount</string>
     <string name="create_card_btn">Create</string>
-    <string name="currency_title">Currency</string>
+    <string name="currency_title">Select Currency</string>
     <string-array name="Currencies">
-        <item>Please Select</item>
+        <item>Please Select Currency</item>
         <item>Euro €</item>
         <item>US dollar $</item>
         <item>Canadian dollar $</item>
@@ -35,14 +35,17 @@
     <string name="create_a_card">Create a card</string>
     <!---help_Activity-->
     <string name="helptitle">Help</string>
-    <string name="helptxt">The e-Portofoli app is an application aimed at helping the user manage their finances.
-        -By pressing the "Add card" button, you are given the possibility to add a bank card and the amount you have available on it.
+    <string name="helptxt">The Expense Manager app is an application aimed at helping the user manage their finances. \n
+        -By pressing the "Add card" button, you are given the possibility to add a bank card and the amount you have available on it. \n
         -By pressing the "Add cash" button, you can add a virtual wallet and name it and the amount you have available.</string>
     <!---First-Activity-->
     <string name="hellotxt">Hello %s!</string>
     <!---First-Page-->
     <string name="add">Add</string>
     <string name="subtract">Subtract</string>
+    <string name="addcard">Add new card/bank</string>
+    <string name="addwallet">Add new wallet</string>
+    <string name="deletedata">Delete data</string>
     <!---layout_for_alert_dialog_newname-->
     <string name="newname">Enter a name</string>
     <string name="okbtn">OK</string>
@@ -57,4 +60,16 @@
     <string name="enteranamount">Enter an amount</string>
     <string name="availableamount">The available amount: %s</string>
     <string name="currency">%s</string>
+    <!---Data-Activity-->
+    <string name="transfer">Transfer</string>
+    <string name="english">EN</string>
+    <string name="greek">GR</string>
+    <!---Transfer-Activity-->
+    <string name="transferfrom">Transfer money from:</string>
+    <string name="from">%s</string>
+    <string name="to">To:</string>
+    <string name="select">Select a card/wallet</string>
+    <!---layout_for_delete-->
+    <string name="delete">Delete</string>
+    <string name="selectadata">Select to delete</string>
 </resources>
