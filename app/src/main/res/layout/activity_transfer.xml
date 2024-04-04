@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_bck"
+    tools:context=".activities.TransferActivity">
+
+    <TextView
+        android:id="@+id/transferttl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transferfrom"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="480dp"
+    />
+
+    <LinearLayout
+        android:id="@+id/slc"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:background="@drawable/roundbtn"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/transferttl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginStart="20dp" />
+
+        <View
+            android:id="@+id/space"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Spinner
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:textSize="28sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/to2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintTop_toBottomOf="@+id/slc"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="50dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/slc2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:background="@drawable/roundbtn"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/to2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/selectto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginStart="20dp" />
+
+        <View
+            android:id="@+id/space2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Spinner
+            android:id="@+id/arrow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:textSize="28sp"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/enteranamount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundbtn"
+        android:padding="4dp"
+        android:hint="@string/enteranamount"
+        android:maxLength="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/backcolorintxtplc"
+        android:textSize="24sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slc2"/>
+
+    <Button
+        android:id="@+id/transferbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transfer"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="180dp"
+        android:background="@drawable/createbtns"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/enteranamount"
+        app:layout_constraintLeft_toLeftOf="@+id/enteranamount"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

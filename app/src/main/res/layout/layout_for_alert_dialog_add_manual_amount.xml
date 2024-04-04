@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="#243CE8"
+    app:cardCornerRadius="16dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/addmanualamount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/enteranamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundbtn"
+            android:padding="10dp"
+            android:layout_marginBottom="14dp"
+            android:hint="@string/enteranamount"
+            android:maxLength="10"
+            android:textColor="@color/white"
+            android:textColorHint="@color/backcolorintxtplc"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/availableamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/availableamount"
+        />
+
+        <TextView
+            android:id="@+id/cur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/availableamount"
+            android:textSize="14sp"
+            android:text="@string/currency"
+        />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="10dp"
+
+            >
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbtn"
+                android:text="@string/add"
+                android:textColor="@color/white"/>
+
+            <View
+                android:id="@+id/space"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/cancelbtn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbtn"
+                android:text="@string/cancelbtn"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

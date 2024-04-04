@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SpinnerDialogCurrencies" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:background">@color/create_btn</item>
+        <item name="android:textColor">@color/white</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem</item>-->
+    </style>
+</resources>
