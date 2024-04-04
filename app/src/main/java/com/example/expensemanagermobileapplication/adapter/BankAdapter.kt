@@ -18,7 +18,7 @@ import com.example.expensemanagermobileapplication.activities.DataActivity
 
 class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder>() {
     //private val bankList: MutableList<BankInfos> = mutableListOf()
-    private val infoList: MutableList<Any> = mutableListOf()
+    private var infoList: MutableList<Any> = mutableListOf()
     private var context: Context? = null
 
     init {
@@ -29,17 +29,14 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
             .inflate(R.layout.list_for_user_data, parent, false)
         return ViewHolder(view)
     }
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val bank = bankList[position]
-//        holder.bind(bank)
-//    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val info = infoList[position]
         holder.bind(info, position)
     }
-//    override fun getItemCount(): Int {
-//        return bankList.size
+
+//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+//        val info = infoList[position]
+//        holder.bind(info, position)
 //    }
 
     override fun getItemCount(): Int {
@@ -54,6 +51,12 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
     fun addInfo(info: Any) {
         infoList.add(info)
         notifyDataSetChanged()
+    }
+
+    fun removeItem(position: Int) {
+        infoList.removeAt(position)
+        notifyItemRemoved(position)
+        notifyItemRangeChanged(position, infoList.size)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -94,6 +97,17 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
 
                 // Start the second activity with the Intent
                 context?.startActivity(intent)
+            }
+
+            // Add onClickListener to delete an item
+            itemView.setOnLongClickListener {
+                removeItem(adapterPosition)
+                true
+            }
+
+            fun updateData(newData: MutableList<String>) {
+                infoList = newData.toMutableList()
+                notifyDataSetChanged()
             }
         }
     }

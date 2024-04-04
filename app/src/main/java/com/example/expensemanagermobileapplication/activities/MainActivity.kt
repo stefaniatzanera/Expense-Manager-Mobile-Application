@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             startBtn.postDelayed({
                 val y = Intent(this, FirstPageActivity::class.java)
                 startActivity(y)
-            }, 1000)
+            }, 300)
         }
     }
 
