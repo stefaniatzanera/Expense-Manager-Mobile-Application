@@ -109,18 +109,6 @@
         app:layout_constraintEnd_toEndOf="@+id/addcardaction"
         app:srcCompat="@drawable/cash" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/deleteaction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
-        android:clickable="true"
-        android:focusable="true"
-        android:visibility="invisible"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/addcashaction"
-        app:layout_constraintEnd_toEndOf="@+id/addcashaction"
-        app:srcCompat="@drawable/delete" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

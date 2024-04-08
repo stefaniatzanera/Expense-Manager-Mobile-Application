@@ -17,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="340dp"
         />
 
     <TextView
@@ -30,7 +30,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="240dp" />
+        android:layout_marginBottom="340dp" />
 
     <LinearLayout
         android:id="@+id/lldata"
@@ -44,6 +44,7 @@
         android:gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/roundbtn">
 
     <TextView
@@ -127,5 +128,19 @@
         app:layout_constraintBottom_toTopOf="@+id/subtractaction"
         app:layout_constraintEnd_toEndOf="@+id/subtractaction"
         app:srcCompat="@drawable/transfer" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/transferaction"
+        app:layout_constraintEnd_toEndOf="@+id/transferaction"
+        app:srcCompat="@drawable/delete"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

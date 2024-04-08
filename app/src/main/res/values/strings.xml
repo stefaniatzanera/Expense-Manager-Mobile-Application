@@ -71,5 +71,5 @@
     <string name="select">Select a card/wallet</string>
     <!---layout_for_delete-->
     <string name="delete">Delete</string>
-    <string name="selectadata">Select to delete</string>
+    <string name="areyousure">Αre you sure you want to delete \"%s\" ?</string>
 </resources>

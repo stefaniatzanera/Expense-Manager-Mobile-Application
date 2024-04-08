@@ -41,6 +41,7 @@ class DataActivity : AppCompatActivity() {
     private val addbtn by lazy { findViewById<FloatingActionButton>(R.id.addaction) }
     private val subbtn by lazy { findViewById<FloatingActionButton>(R.id.subtractaction) }
     private val transferbtn by lazy { findViewById<FloatingActionButton>(R.id.transferaction) }
+    private val deletebtn by lazy { findViewById<FloatingActionButton>(R.id.deleteaction) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -108,6 +109,25 @@ class DataActivity : AppCompatActivity() {
             }
             startActivity(z)
         }
+
+        deletebtn.setOnClickListener {
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.layout_for_delete)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val title by lazy { dialog.findViewById<TextView>(R.id.question) }
+            val erasebtn by lazy { dialog.findViewById<Button>(R.id.delete) }
+            val cancel by lazy { dialog.findViewById<Button>(R.id.cancelbtn) }
+
+            title.text = getString(R.string.areyousure,name)
+
+            cancel.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.setCancelable(true)
+            dialog.show()
+        }
     }
     //show dialog for edit the name of bank/wallet
     private fun showEditNameDialog(keyString: String) {
@@ -144,10 +164,12 @@ class DataActivity : AppCompatActivity() {
             addbtn.visibility = View.VISIBLE
             subbtn.visibility = View.VISIBLE
             transferbtn.visibility = View.VISIBLE
+            deletebtn.visibility = View.VISIBLE
         }else{
             addbtn.visibility = View.INVISIBLE
             subbtn.visibility = View.INVISIBLE
             transferbtn.visibility = View.INVISIBLE
+            deletebtn.visibility = View.INVISIBLE
         }
     }
     private fun setAnimation(clicked: Boolean){
@@ -155,11 +177,13 @@ class DataActivity : AppCompatActivity() {
             addbtn.startAnimation(fromBottom)
             subbtn.startAnimation(fromBottom)
             transferbtn.startAnimation(fromBottom)
+            deletebtn.startAnimation(fromBottom)
             actions_btn.startAnimation(rotateOpen)
         }else{
             addbtn.startAnimation(toBottom)
             subbtn.startAnimation(toBottom)
             transferbtn.startAnimation(toBottom)
+            deletebtn.startAnimation(toBottom)
             actions_btn.startAnimation(rotateClosed)
         }
     }

@@ -72,7 +72,6 @@ class FirstPageActivity : AppCompatActivity() {
     private val actions_btn by lazy { findViewById<FloatingActionButton>(R.id.actionsbtn) }
     private val add_card_btn by lazy { findViewById<FloatingActionButton>(R.id.addcardaction) }
     private val add_wallet_btn by lazy { findViewById<FloatingActionButton>(R.id.addcashaction) }
-    private val delete_btn by lazy { findViewById<FloatingActionButton>(R.id.deleteaction) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -174,10 +173,6 @@ class FirstPageActivity : AppCompatActivity() {
             val wallet = Intent(this, AddCashActivity::class.java)
             startActivity(wallet)
         }
-
-        delete_btn.setOnClickListener {
-            showDeleteDialog()
-        }
     }
 
     //function for changing image
@@ -219,11 +214,9 @@ class FirstPageActivity : AppCompatActivity() {
         if (!clicked) {
             add_card_btn.visibility = View.VISIBLE
             add_wallet_btn.visibility = View.VISIBLE
-            delete_btn.visibility = View.VISIBLE
         } else {
             add_card_btn.visibility = View.INVISIBLE
             add_wallet_btn.visibility = View.INVISIBLE
-            delete_btn.visibility = View.INVISIBLE
         }
     }
 
@@ -231,83 +224,12 @@ class FirstPageActivity : AppCompatActivity() {
         if (!clicked) {
             add_card_btn.startAnimation(fromBottom)
             add_wallet_btn.startAnimation(fromBottom)
-            delete_btn.startAnimation(fromBottom)
             actions_btn.startAnimation(rotateOpen)
         } else {
             add_card_btn.startAnimation(toBottom)
             add_wallet_btn.startAnimation(toBottom)
-            delete_btn.startAnimation(toBottom)
             actions_btn.startAnimation(rotateClosed)
         }
     }
 
-    private fun showDeleteDialog() {
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.layout_for_delete)
-
-        val name = dialog.findViewById<TextView>(R.id.dataname)
-        val deleteButton = dialog.findViewById<Button>(R.id.delete)
-        val cancelButton = dialog.findViewById<Button>(R.id.cancelbtn)
-
-        val datanames = mutableListOf<String>()
-
-        val b_count = sp.getInt("bankID", 0)
-        for (b in 1..b_count) {
-            val bankName = sp.getString("name_of_bank_$b", "null")
-            if (bankName!!.isNotBlank()) {
-                datanames.add(bankName)
-            }
-        }
-
-        val w_count = sp.getInt("walletID", 0)
-        for (w in 1..w_count) {
-            val walletName = sp.getString("name_of_wallet_$w", "null")
-            if (walletName!!.isNotBlank()) {
-                datanames.add(walletName)
-            }
-        }
-
-        name.text = datanames.joinToString(separator = "\n")
-
-        deleteButton.setOnClickListener {
-            // Get the selected data name
-            val selectedDataName = name.text.toString()
-
-            // Iterate through SharedPreferences to delete data associated with the selected data name
-            val editor = sp.edit()
-            // Delete bank data
-            val bankCount = sp.getInt("bankID", 0)
-            for (i in 1..bankCount) {
-                val bankName = sp.getString("name_of_bank_$i", "") ?: ""
-                if (bankName == selectedDataName) {
-                    editor.remove("name_of_bank_$i")
-                    editor.remove("amount_in_bank_$i")
-                    editor.remove("currency_bank_$i")
-                }
-            }
-            // Delete wallet data
-            val walletCount = sp.getInt("walletID", 0)
-            for (i in 1..walletCount) {
-                val walletName = sp.getString("name_of_wallet_$i", "") ?: ""
-                if (walletName == selectedDataName) {
-                    editor.remove("name_of_wallet_$i")
-                    editor.remove("amount_in_wallet_$i")
-                    editor.remove("currency_wallet_$i")
-                }
-            }
-            editor.apply()
-
-            // Notify the user about the successful deletion
-            Toast.makeText(this, "$selectedDataName deleted!", Toast.LENGTH_SHORT).show()
-
-            dialog.dismiss()
-        }
-
-        cancelButton.setOnClickListener {
-            dialog.dismiss()
-        }
-
-        dialog.setCancelable(true)
-        dialog.show()
-    }
 }
