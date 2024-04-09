@@ -74,6 +74,7 @@
 
     <Spinner
         android:id="@+id/currenciesoptions"
+        android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/amounttxtplc"

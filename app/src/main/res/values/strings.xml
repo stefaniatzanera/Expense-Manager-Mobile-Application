@@ -10,9 +10,8 @@
     <string name="name_of_bank_or_card" translatable="false">Name of bank/card</string>
     <string name="amount_of_card" translatable="false">Amount</string>
     <string name="create_card_btn">Create</string>
-    <string name="currency_title">Select Currency</string>
+    <string name="currency_title">Click to select currency</string>
     <string-array name="Currencies">
-        <item>Please Select Currency</item>
         <item>Euro €</item>
         <item>US dollar $</item>
         <item>Canadian dollar $</item>
@@ -67,8 +66,8 @@
     <!---Transfer-Activity-->
     <string name="transferfrom">Transfer money from:</string>
     <string name="from">%s</string>
-    <string name="to">To:</string>
-    <string name="select">Select a card/wallet</string>
+    <string name="to">To: </string>
+    <string name="select">Click to select</string>
     <!---layout_for_delete-->
     <string name="delete">Delete</string>
     <string name="areyousure">Αre you sure you want to delete \"%s\" ?</string>

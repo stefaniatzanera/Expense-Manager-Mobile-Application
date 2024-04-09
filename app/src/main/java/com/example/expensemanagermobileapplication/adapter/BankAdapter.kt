@@ -34,11 +34,6 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
         holder.bind(info, position)
     }
 
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val info = infoList[position]
-//        holder.bind(info, position)
-//    }
-
     override fun getItemCount(): Int {
         return infoList.size
     }
@@ -56,7 +51,6 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
     fun removeItem(position: Int) {
         infoList.removeAt(position)
         notifyItemRemoved(position)
-        notifyItemRangeChanged(position, infoList.size)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -97,12 +91,6 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
 
                 // Start the second activity with the Intent
                 context?.startActivity(intent)
-            }
-
-            // Add onClickListener to delete an item
-            itemView.setOnLongClickListener {
-                removeItem(adapterPosition)
-                true
             }
 
             fun updateData(newData: MutableList<String>) {

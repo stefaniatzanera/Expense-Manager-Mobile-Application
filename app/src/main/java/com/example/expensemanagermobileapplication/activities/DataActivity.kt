@@ -12,10 +12,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.example.expensemanagermobileapplication.R
 import com.example.expensemanagermobileapplication.adapter.BankAdapter
 import com.example.expensemanagermobileapplication.dataClass.BankInfos
@@ -121,6 +118,15 @@ class DataActivity : AppCompatActivity() {
 
             title.text = getString(R.string.areyousure,name)
 
+            erasebtn.setOnClickListener {
+                val editor = sp.edit()
+
+
+                Toast.makeText(this, "$name deleted.", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+                finish()
+            }
+
             cancel.setOnClickListener {
                 dialog.dismiss()
             }
@@ -187,4 +193,5 @@ class DataActivity : AppCompatActivity() {
             actions_btn.startAnimation(rotateClosed)
         }
     }
+
 }

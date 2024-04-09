@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.view.Window
 import android.widget.*
@@ -24,11 +25,13 @@ class AddCardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_card)
 
         val currencies = resources.getStringArray(R.array.Currencies)
+        val prompt = "Click to select currency"
+        val currenciesWithPrompt = arrayOf(prompt) + currencies
 
         if (spinner != null) {
             val adapter = ArrayAdapter(
                 this,
-                android.R.layout.simple_spinner_item, currencies
+                android.R.layout.simple_spinner_item, currenciesWithPrompt
             )
             spinner.adapter = adapter
 
