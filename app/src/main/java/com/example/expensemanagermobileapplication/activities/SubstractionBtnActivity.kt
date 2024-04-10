@@ -1,6 +1,7 @@
 package com.example.expensemanagermobileapplication.activities
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -23,7 +24,9 @@ class SubstractionBtnActivity : AppCompatActivity() {
         val amount = intent.getFloatExtra("amount", 0f)
         val currency = intent.getStringExtra("currency")
         val keyString = intent.getStringExtra("key")!!
+        val feature = intent.getStringExtra("feature")
 
+        val sp = getSharedPreferences("userOptions", MODE_PRIVATE)
 
         val dialog = Dialog(this)
         subbtn.setOnClickListener {
@@ -44,8 +47,18 @@ class SubstractionBtnActivity : AppCompatActivity() {
                 amountofdata.text = getString(R.string.availableamount, amount.toString())
                 currencydata.text = getString(R.string.currency,currencydata)
                 val res = subtracttheamount(enteredamount.toFloat(),amount)
+                val editor = sp.edit()
+                if (feature == "w")
+                    editor.putFloat("amount_in_wallet_$keyString", res)
+                else
+                    editor.putFloat("amount_in_bank_$keyString", res)
+                editor.apply()
+
                 Toast.makeText(this@SubstractionBtnActivity, "result = $res", Toast.LENGTH_LONG).show()
                 dialog.dismiss()
+                val intent = Intent(this@SubstractionBtnActivity, FirstPageActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
             cancelbtn.setOnClickListener {
                 dialog.dismiss()

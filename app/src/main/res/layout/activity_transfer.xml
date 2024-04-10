@@ -37,22 +37,29 @@
         android:layout_marginBottom="480dp"
         />
 
-    <Spinner
-        android:id="@+id/selectdestination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/from"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
         android:gravity="center"
-        android:layout_marginTop="140dp"
-        android:padding="10dp"
-        android:spinnerMode="dialog"
-        android:background="@null"
-        android:textColor="@color/white"
+        tools:context=".TransferActivity"
         app:layout_constraintTop_toBottomOf="@+id/transferttl"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        />
-
+        android:layout_marginTop="140dp">
+            <Spinner
+                android:id="@+id/selectdestination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/from"
+                android:padding="10dp"
+                android:spinnerMode="dialog"
+                android:background="@null"
+                android:textColor="@color/white"
+                />
+    </LinearLayout>
 
         <ImageButton
             android:id="@+id/qrbtn"

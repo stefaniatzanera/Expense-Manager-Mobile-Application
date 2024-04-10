@@ -92,11 +92,6 @@ class BankAdapter(context: Context): RecyclerView.Adapter<BankAdapter.ViewHolder
                 // Start the second activity with the Intent
                 context?.startActivity(intent)
             }
-
-            fun updateData(newData: MutableList<String>) {
-                infoList = newData.toMutableList()
-                notifyDataSetChanged()
-            }
         }
     }
 }

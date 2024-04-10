@@ -110,19 +110,23 @@ class FirstPageActivity : AppCompatActivity() {
         val b_id = sp.getInt("bankID", 0)
         for (b in 1..b_id) {
             val bankName = sp.getString("name_of_bank_$b", "null")
+            if (bankName == "null")
+                continue
             val bankAmount = sp.getFloat("amount_in_bank_$b", 0F)
             val bankCur = sp.getString("currency_bank_$b", "null")!!
-            val bankdata = BankInfos(bankName!!, bankAmount, bankCur, "name_of_bank_$b", "feature")
+            val bankdata = BankInfos(bankName!!, bankAmount, bankCur, b.toString(), "feature")
             adapter.addInfo(bankdata)
         }
 
         val w_id = sp.getInt("walletID", 0)
         for (w in 1..w_id) {
             val walletName = sp.getString("name_of_wallet_$w", "null")
+            if (walletName == "null")
+                continue
             val walletAmount = sp.getFloat("amount_in_wallet_$w", 0F)
             val walletCur = sp.getString("currency_wallet_$w", "null")!!
             val walletdata =
-                WalletInfos(walletName!!, walletAmount, walletCur, "name_of_wallet_$w", "feature")
+                WalletInfos(walletName!!, walletAmount, walletCur, w.toString(), "feature")
             adapter.addInfo(walletdata)
         }
 

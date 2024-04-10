@@ -49,7 +49,9 @@ class DataActivity : AppCompatActivity() {
         val amount = intent.getStringExtra("amount")
         val currency = intent.getStringExtra("currency")
         val keyString = intent.getStringExtra("key")!!
-        var feature = intent.getStringExtra("feature")
+        val feature = intent.getStringExtra("feature")
+
+        sp = getSharedPreferences("userOptions", MODE_PRIVATE)
 
         //image for data
         val drawableResId = when (feature) {
@@ -121,9 +123,23 @@ class DataActivity : AppCompatActivity() {
             erasebtn.setOnClickListener {
                 val editor = sp.edit()
 
+                if (feature == "w") {
+                    editor.remove("name_of_wallet_$keyString")
+                    editor.remove("amount_in_wallet_$keyString")
+                    editor.remove("currency_wallet_$keyString")
+                }
+                else {
+                    editor.remove("name_of_bank_$keyString")
+                    editor.remove("amount_in_bank_$keyString")
+                    editor.remove("currency_bank_$keyString")
+                }
+                editor.apply()
 
                 Toast.makeText(this, "$name deleted.", Toast.LENGTH_SHORT).show()
                 dialog.dismiss()
+                val intent = Intent(this@DataActivity, FirstPageActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
                 finish()
             }
 
