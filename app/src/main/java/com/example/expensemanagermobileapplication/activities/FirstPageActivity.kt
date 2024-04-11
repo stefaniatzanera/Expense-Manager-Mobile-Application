@@ -208,7 +208,7 @@ class FirstPageActivity : AppCompatActivity() {
         }
     }
 
-    //Functions for actions buttons
+    //Functions/Animations for actions buttons
     private fun onAddButtonClicked() {
         setVisibility(clicked)
         setAnimation(clicked)
