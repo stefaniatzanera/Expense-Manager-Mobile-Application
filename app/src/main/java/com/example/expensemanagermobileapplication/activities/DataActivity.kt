@@ -36,9 +36,13 @@ class DataActivity : AppCompatActivity() {
     private var clicked = false
     private val actions_btn by lazy { findViewById<FloatingActionButton>(R.id.actionsbtn) }
     private val addbtn by lazy { findViewById<FloatingActionButton>(R.id.addaction) }
+    private val addamountttlt by lazy { findViewById<TextView>(R.id.addamountttl) }
     private val subbtn by lazy { findViewById<FloatingActionButton>(R.id.subtractaction) }
+    private val subamountttlt by lazy { findViewById<TextView>(R.id.subamountttl) }
     private val transferbtn by lazy { findViewById<FloatingActionButton>(R.id.transferaction) }
+    private val transferttl by lazy { findViewById<TextView>(R.id.transferttl) }
     private val deletebtn by lazy { findViewById<FloatingActionButton>(R.id.deleteaction) }
+    private val deletettl by lazy { findViewById<TextView>(R.id.deletettl) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -184,28 +188,44 @@ class DataActivity : AppCompatActivity() {
     private fun setVisibility(clicked: Boolean){
         if(!clicked){
             addbtn.visibility = View.VISIBLE
+            addamountttlt.visibility = View.VISIBLE
             subbtn.visibility = View.VISIBLE
+            subamountttlt.visibility = View.VISIBLE
             transferbtn.visibility = View.VISIBLE
+            transferttl.visibility = View.VISIBLE
             deletebtn.visibility = View.VISIBLE
+            deletettl.visibility = View.VISIBLE
         }else{
             addbtn.visibility = View.INVISIBLE
+            addamountttlt.visibility = View.INVISIBLE
             subbtn.visibility = View.INVISIBLE
+            subamountttlt.visibility = View.INVISIBLE
             transferbtn.visibility = View.INVISIBLE
+            transferttl.visibility = View.INVISIBLE
             deletebtn.visibility = View.INVISIBLE
+            deletettl.visibility = View.INVISIBLE
         }
     }
     private fun setAnimation(clicked: Boolean){
         if(!clicked){
             addbtn.startAnimation(fromBottom)
+            addamountttlt.startAnimation(fromBottom)
             subbtn.startAnimation(fromBottom)
+            subamountttlt.startAnimation(fromBottom)
             transferbtn.startAnimation(fromBottom)
+            transferttl.startAnimation(fromBottom)
             deletebtn.startAnimation(fromBottom)
+            deletettl.startAnimation(fromBottom)
             actions_btn.startAnimation(rotateOpen)
         }else{
             addbtn.startAnimation(toBottom)
+            addamountttlt.startAnimation(toBottom)
             subbtn.startAnimation(toBottom)
+            subamountttlt.startAnimation(toBottom)
             transferbtn.startAnimation(toBottom)
+            transferttl.startAnimation(toBottom)
             deletebtn.startAnimation(toBottom)
+            deletettl.startAnimation(toBottom)
             actions_btn.startAnimation(rotateClosed)
         }
     }

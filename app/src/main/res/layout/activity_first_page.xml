@@ -96,6 +96,21 @@
         android:layout_marginBottom="16dp"
         app:srcCompat="@drawable/card" />
 
+    <TextView
+        android:id="@+id/addcardttl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addcard"
+        android:textColorHint="@color/colors_btn"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/addcardaction"
+        app:layout_constraintBottom_toTopOf="@+id/actionsbtn"
+        app:layout_constraintEnd_toEndOf="@+id/actionsbtn"
+        android:textSize="12sp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="34dp"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addcashaction"
         android:layout_width="wrap_content"
@@ -109,6 +124,20 @@
         app:layout_constraintEnd_toEndOf="@+id/addcardaction"
         app:srcCompat="@drawable/cash" />
 
+    <TextView
+        android:id="@+id/addwalletttl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addwallet"
+        android:textColorHint="@color/colors_btn"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/addcashaction"
+        app:layout_constraintBottom_toTopOf="@+id/addcardaction"
+        app:layout_constraintEnd_toEndOf="@+id/addcardaction"
+        android:textSize="12sp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="34dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

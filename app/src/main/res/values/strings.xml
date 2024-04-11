@@ -63,6 +63,8 @@
     <string name="transfer">Transfer</string>
     <string name="english">EN</string>
     <string name="greek">GR</string>
+    <string name="addamount">Add amount</string>
+    <string name="subtractamount">Subtract amount</string>
     <!---Transfer-Activity-->
     <string name="transferfrom">Transfer money from:</string>
     <string name="from">%s</string>

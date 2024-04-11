@@ -103,6 +103,21 @@
         android:layout_marginBottom="16dp"
         app:srcCompat="@drawable/add" />
 
+    <TextView
+        android:id="@+id/addamountttl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addamount"
+        android:textColorHint="@color/colors_btn"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/addaction"
+        app:layout_constraintBottom_toTopOf="@+id/actionsbtn"
+        app:layout_constraintEnd_toEndOf="@+id/actionsbtn"
+        android:textSize="12sp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="34dp"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/subtractaction"
         android:layout_width="wrap_content"
@@ -115,6 +130,20 @@
         app:layout_constraintBottom_toTopOf="@+id/addaction"
         app:layout_constraintEnd_toEndOf="@+id/addaction"
         app:srcCompat="@drawable/sub" />
+
+    <TextView
+        android:id="@+id/subamountttl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtractamount"
+        android:textColorHint="@color/colors_btn"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/addaction"
+        app:layout_constraintEnd_toEndOf="@+id/addaction"
+        android:textSize="12sp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="34dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/transferaction"
@@ -129,6 +158,20 @@
         app:layout_constraintEnd_toEndOf="@+id/subtractaction"
         app:srcCompat="@drawable/transfer" />
 
+    <TextView
+        android:id="@+id/transferttl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transfer"
+        android:textColorHint="@color/colors_btn"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/subtractaction"
+        app:layout_constraintEnd_toEndOf="@+id/subtractaction"
+        android:textSize="12sp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="34dp"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/deleteaction"
         android:layout_width="wrap_content"
@@ -141,6 +184,21 @@
         app:layout_constraintBottom_toTopOf="@+id/transferaction"
         app:layout_constraintEnd_toEndOf="@+id/transferaction"
         app:srcCompat="@drawable/delete"/>
+
+    <TextView
+        android:id="@+id/deletettl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textColorHint="@color/colors_btn"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/transferaction"
+        app:layout_constraintEnd_toEndOf="@+id/transferaction"
+        android:textSize="12sp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="34dp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

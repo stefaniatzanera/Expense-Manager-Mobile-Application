@@ -71,7 +71,9 @@ class FirstPageActivity : AppCompatActivity() {
     private var clicked = false
     private val actions_btn by lazy { findViewById<FloatingActionButton>(R.id.actionsbtn) }
     private val add_card_btn by lazy { findViewById<FloatingActionButton>(R.id.addcardaction) }
+    private val addcardttl by lazy { findViewById<TextView>(R.id.addcardttl) }
     private val add_wallet_btn by lazy { findViewById<FloatingActionButton>(R.id.addcashaction) }
+    private val addwalletttl by lazy { findViewById<TextView>(R.id.addwalletttl) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -217,21 +219,29 @@ class FirstPageActivity : AppCompatActivity() {
     private fun setVisibility(clicked: Boolean) {
         if (!clicked) {
             add_card_btn.visibility = View.VISIBLE
+            addcardttl.visibility = View.VISIBLE
             add_wallet_btn.visibility = View.VISIBLE
+            addwalletttl.visibility = View.VISIBLE
         } else {
             add_card_btn.visibility = View.INVISIBLE
+            addcardttl.visibility = View.INVISIBLE
             add_wallet_btn.visibility = View.INVISIBLE
+            addwalletttl.visibility = View.INVISIBLE
         }
     }
 
     private fun setAnimation(clicked: Boolean) {
         if (!clicked) {
             add_card_btn.startAnimation(fromBottom)
+            addcardttl.startAnimation(fromBottom)
             add_wallet_btn.startAnimation(fromBottom)
+            addwalletttl.startAnimation(fromBottom)
             actions_btn.startAnimation(rotateOpen)
         } else {
             add_card_btn.startAnimation(toBottom)
+            addcardttl.startAnimation(toBottom)
             add_wallet_btn.startAnimation(toBottom)
+            addwalletttl.startAnimation(toBottom)
             actions_btn.startAnimation(rotateClosed)
         }
     }
