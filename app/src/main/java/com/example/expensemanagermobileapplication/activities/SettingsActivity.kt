@@ -4,31 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
 import com.example.expensemanagermobileapplication.R
+import com.example.expensemanagermobileapplication.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+//        setContentView(R.layout.activity_settings)
 
-        val addCardButton by lazy { findViewById<Button>(R.id.addcardbtn)}
-        val addCashButton by lazy { findViewById<Button>(R.id.addcashbtn)}
-        val infoButton by lazy { findViewById<Button>(R.id.infobtn)}
+        val binding = DataBindingUtil.setContentView<ActivitySettingsBinding>(this,R.layout.activity_settings)
 
-        addCardButton.setOnClickListener {
-            //Toast.makeText(this,"pressed", Toast.LENGTH_LONG).show()
-            val x = Intent(this, AddCardActivity::class.java)
-            startActivity(x)
-        }
 
-        addCashButton.setOnClickListener{
-            val y = Intent(this, AddCashActivity::class.java)
-            startActivity(y)
-        }
-
-        infoButton.setOnClickListener{
-            val z = Intent(this, InfoActivity::class.java)
-            startActivity(z)
-        }
     }
 }

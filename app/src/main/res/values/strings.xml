@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name" translatable="false">Expense Manager Mobile Application</string>
+    <string name="name">Expense Manager</string>
     <!--- main_Activity-->
     <string name="start" translatable="false">START</string>
     <string name="add_card" translatable="false">Add Card</string>
-    <string name="add_cash" translatable="false">Add Cash</string>
+    <string name="add_cash" translatable="false">Add Wallet</string>
     <string name="help" translatable="false">Help</string>
     <!---add_card_Activity-->
     <string name="title_new_card" translatable="false">Create  new card</string>
@@ -54,7 +55,29 @@
     <!---Substraction-Btn-Activity-->
     <string name="substractionbtntitle">Substract money from: %s</string>
     <!---Settings-Activity-->
-    <string name="infobtn">Info</string>
+    <string name="userdatattl">User Data</string>
+    <string name="addcarddesc">You can add a new card and choose the currency! </string>
+    <string name="addwalletdesc">You can add a new wallet and choose the currency! </string>
+    <string name="deleteall">Delete all data</string>
+    <string name="deletealldesc">Delete all elements you have created!</string>
+    <string name="deleteone">Delete one element</string>
+    <string name="deleteonedesc">Delete an item !</string>
+    <string name="energies">Energies</string>
+    <string name="addmoney">Add money</string>
+    <string name="addmoneydesc">Add money to an item!</string>
+    <string name="submoney">Subtract money</string>
+    <string name="submoneydesc">Subtract money to an item!</string>
+    <string name="transfermoney">Transfer money</string>
+    <string name="transfermoneydesc">Select from &amp; to options to transfer money!</string>
+    <string name="about">About Expense Manager</string>
+    <string name="rate">Rate Expense Manager</string>
+    <string name="ratedesc">It would help to improve!</string>
+    <string name="contact">Contact me</string>
+    <string name="contactdesc">If there is any problem, you can send an email!</string>
+    <string name="sourcecode">Source Code</string>
+    <string name="sourcecodedesc">You can see the source code on github!</string>
+    <string name="futureplans">Future features</string>
+    <string name="futureplansdesc">You can see future implementations that will exist!</string>
     <!---layout_for_alert_dialog_add_manual_amount-->
     <string name="enteranamount">Enter an amount</string>
     <string name="availableamount">The available amount: %s</string>
@@ -63,13 +86,14 @@
     <string name="transfer">Transfer</string>
     <string name="english">EN</string>
     <string name="greek">GR</string>
-    <string name="addamount">Add amount</string>
-    <string name="subtractamount">Subtract amount</string>
+    <string name="addamount">Add money</string>
+    <string name="subtractamount">Subtract money</string>
     <!---Transfer-Activity-->
     <string name="transferfrom">Transfer money from:</string>
     <string name="from">%s</string>
     <string name="to">To: </string>
     <string name="select">Click to select</string>
+    <string name="destination">Select destination</string>
     <!---layout_for_delete-->
     <string name="delete">Delete</string>
     <string name="areyousure">Αre you sure you want to delete \"%s\" ?</string>

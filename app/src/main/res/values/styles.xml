@@ -6,4 +6,8 @@
         <item name="android:text">@string/currency_title</item>
 <!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem</item>-->
     </style>
+    <style name="SpinnerDialogTransfer">
+        <item name="android:background">@color/create_btn</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>
