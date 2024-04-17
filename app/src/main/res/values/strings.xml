@@ -36,8 +36,8 @@
     <!---help_Activity-->
     <string name="helptitle">Help</string>
     <string name="helptxt">The Expense Manager app is an application aimed at helping the user manage their finances. \n
-        -By pressing the "Add card" button, you are given the possibility to add a bank card and the amount you have available on it. \n
-        -By pressing the "Add cash" button, you can add a virtual wallet and name it and the amount you have available.</string>
+        -By pressing the <b>"Add card"</b> button, you are given the possibility to add a bank card and the amount you have available on it. \n
+        -By pressing the <b>"Add cash"</b> button, you can add a virtual wallet and name it and the amount you have available.</string>
     <!---First-Activity-->
     <string name="hellotxt">Hello %s!</string>
     <!---First-Page-->
