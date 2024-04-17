@@ -77,5 +77,10 @@ class SettingsActivity : AppCompatActivity() {
             }
 
         }
+
+        fpbtn.setOnClickListener{
+            val a = Intent(this@SettingsActivity, FuturePlansActivity::class.java)
+            startActivity(a)
+        }
     }
 }

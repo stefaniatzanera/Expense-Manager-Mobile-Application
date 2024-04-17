@@ -1,13 +1,14 @@
 <resources>
     <string name="app_name" translatable="false">Expense Manager Mobile Application</string>
     <string name="name">Expense Manager</string>
+    <string name="required">Required</string>
     <!--- main_Activity-->
     <string name="start" translatable="false">START</string>
     <string name="add_card" translatable="false">Add Card</string>
     <string name="add_cash" translatable="false">Add Wallet</string>
     <string name="help" translatable="false">Help</string>
     <!---add_card_Activity-->
-    <string name="title_new_card" translatable="false">Create  new card</string>
+    <string name="title_new_card" translatable="false">Create new card</string>
     <string name="name_of_bank_or_card" translatable="false">Name of bank/card</string>
     <string name="amount_of_card" translatable="false">Amount</string>
     <string name="create_card_btn">Create</string>
@@ -76,7 +77,7 @@
     <string name="contactdesc">If there is any problem, you can send an email!</string>
     <string name="sourcecode">Source Code</string>
     <string name="sourcecodedesc">You can see the source code on github!</string>
-    <string name="futureplans">Future features</string>
+    <string name="futureplans">Future goals</string>
     <string name="futureplansdesc">You can see future implementations that will exist!</string>
     <!---layout_for_alert_dialog_add_manual_amount-->
     <string name="enteranamount">Enter an amount</string>
@@ -84,6 +85,7 @@
     <string name="currency">%s</string>
     <!---Data-Activity-->
     <string name="transfer">Transfer</string>
+    <string name="select_destination_placeholder">Select destination</string>
     <string name="english">EN</string>
     <string name="greek">GR</string>
     <string name="addamount">Add money</string>
@@ -94,7 +96,21 @@
     <string name="to">To: </string>
     <string name="select">Click to select</string>
     <string name="destination">Select destination</string>
+    <string name="clicktoselect">Click to select destination</string>
     <!---layout_for_delete-->
     <string name="delete">Delete</string>
     <string name="areyousure">Αre you sure you want to delete \"%s\" ?</string>
+    <!---futuresplans-->
+    <string name="cexchange">Currency Exchange</string>
+    <string name="cexchangedesc">Currency conversion will be allowed based on the rates they have at that time!</string>
+    <string name="history">Transaction History</string>
+    <string name="historydesc">You will be able to see the last transactions you made!</string>
+    <string name="calculator">Calculator</string>
+    <string name="calculatordesc">Ability to display a calculator within the application!</string>
+    <string name="statistics">Statistics</string>
+    <string name="statisticsdesc">Statistics about your finances!</string>
+    <string name="ios">IOS implementation</string>
+    <string name="iosdesc">It will soon be implemented for ios devices!</string>
+    <string name="todolist">TODO list</string>
+    <string name="todolistdesc">A list like a notebook!</string>
 </resources>
