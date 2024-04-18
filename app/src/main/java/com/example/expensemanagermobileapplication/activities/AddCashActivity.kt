@@ -11,17 +11,22 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.expensemanagermobileapplication.R
 import com.example.expensemanagermobileapplication.databinding.ActivityAddCashBinding
+import com.google.android.material.textfield.TextInputEditText
+
 
 class AddCashActivity : AppCompatActivity() {
-    val nameofwallet by lazy { findViewById<EditText>(R.id.nameofwallet) }
-    val amountofwallet by lazy { findViewById<EditText>(R.id.amounttxtplc) }
+    val nameofwallet by lazy { findViewById<TextInputEditText>(R.id.nameofwallet) }
+    val amountofwallet by lazy { findViewById<TextInputEditText>(R.id.amounttxtplc) }
     val createbtn by lazy { findViewById<Button>(R.id.createbtn) }
     val spinner by lazy { findViewById<Spinner>(R.id.currenciesoptions) }
+    val placeholderTextView by lazy {findViewById<TextView>(R.id.placeholder) }
     lateinit var binding: ActivityAddCashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_cash)
+
+        var userInteraction = false
 
         val currencies = resources.getStringArray(R.array.Currencies)
 
@@ -31,25 +36,6 @@ class AddCashActivity : AppCompatActivity() {
                 android.R.layout.simple_spinner_item, currencies
             )
             spinner.adapter = adapter
-
-            spinner.onItemSelectedListener = object :
-                AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>,
-                    view: View, position: Int, id: Long
-                ) {
-                    Toast.makeText(
-                        this@AddCashActivity,
-                        getString(R.string.currency_title) + " " +
-                                "" + currencies[position], Toast.LENGTH_SHORT
-                    ).show()
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>) {
-                    Toast.makeText(this@AddCashActivity, "Nothing selected!", Toast.LENGTH_LONG)
-                        .show()
-                }
-            }
         }
 
         val sharedPref = getSharedPreferences("userOptions", MODE_PRIVATE)
@@ -80,6 +66,25 @@ class AddCashActivity : AppCompatActivity() {
                 .show()
             showCreateCashDialog()
         }
+
+        placeholderTextView.setOnClickListener {
+            spinner.performClick()
+        }
+
+        spinner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View, position: Int, id: Long
+            ) {
+                if(!userInteraction)
+                    userInteraction = true
+                else
+                    placeholderTextView.text = currencies[position]
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
+        }
     }
 
     private fun showCreateCashDialog() {
@@ -94,8 +99,8 @@ class AddCashActivity : AppCompatActivity() {
         val btncontinuewithapp : Button = dialog.findViewById(R.id.continue_with_app)
 
         btncreateanotherwallet.setOnClickListener{
-            nameofwallet.text.clear()
-            amountofwallet.text.clear()
+            nameofwallet.text?.clear()
+            amountofwallet.text?.clear()
             dialog.dismiss()
         }
 

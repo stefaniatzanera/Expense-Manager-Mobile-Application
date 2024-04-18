@@ -17,8 +17,8 @@ class TransferActivity : AppCompatActivity() {
     val currencyamount by lazy { findViewById<TextView>(R.id.currencyamount) }
     val destination by lazy { findViewById<Spinner>(R.id.selectdestination) }
     val placeholderText by lazy {findViewById<TextView>(R.id.placeholder) }
-    val qr by lazy { findViewById<Button>(R.id.qrbtn) }
-    val manualtransfer by lazy { findViewById<Button>(R.id.manualtransferbtn) }
+    val qr by lazy { findViewById<ImageButton>(R.id.qrbtn) }
+    val manualtransfer by lazy { findViewById<ImageButton>(R.id.manualtransferbtn) }
     private lateinit var sp: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +27,8 @@ class TransferActivity : AppCompatActivity() {
 
         val name = intent.getStringExtra("name")
         from.text = name
-        val amount = intent.getStringExtra("amount")
-        amountto.text = amount
+        val amount = intent.getFloatExtra("amount",0F)
+        amountto.text = amount.toString()
         val currency = intent.getStringExtra("currency")
         currencyamount.text = currency?.last().toString()
         val keyString = intent.getStringExtra("key")!!
@@ -71,8 +71,5 @@ class TransferActivity : AppCompatActivity() {
             destination.performClick()
         }
 
-        manualtransfer.setOnClickListener {
-
-        }
     }
 }
