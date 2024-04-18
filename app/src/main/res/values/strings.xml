@@ -97,6 +97,8 @@
     <string name="select">Click to select</string>
     <string name="destination">Select destination</string>
     <string name="clicktoselect">Click to select destination</string>
+    <string name="amountintrans">%s</string>
+    <string name="currencyamount">%s</string>
     <!---layout_for_delete-->
     <string name="delete">Delete</string>
     <string name="areyousure">Αre you sure you want to delete \"%s\" ?</string>

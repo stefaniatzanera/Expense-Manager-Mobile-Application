@@ -13,6 +13,8 @@ import com.example.expensemanagermobileapplication.dataClass.WalletInfos
 class TransferActivity : AppCompatActivity() {
     val transfertitle by lazy { findViewById<TextView>(R.id.transferttl) }
     val from by lazy { findViewById<TextView>(R.id.from) }
+    val amountto by lazy { findViewById<TextView>(R.id.amountto) }
+    val currencyamount by lazy { findViewById<TextView>(R.id.currencyamount) }
     val destination by lazy { findViewById<Spinner>(R.id.selectdestination) }
     val placeholderText by lazy {findViewById<TextView>(R.id.placeholder) }
     val qr by lazy { findViewById<Button>(R.id.qrbtn) }
@@ -26,7 +28,9 @@ class TransferActivity : AppCompatActivity() {
         val name = intent.getStringExtra("name")
         from.text = name
         val amount = intent.getStringExtra("amount")
+        amountto.text = amount
         val currency = intent.getStringExtra("currency")
+        currencyamount.text = currency?.last().toString()
         val keyString = intent.getStringExtra("key")!!
 
         val namesofdata = destination.findViewById<TextView>(R.id.name)
@@ -61,13 +65,14 @@ class TransferActivity : AppCompatActivity() {
         }
 
         val adapter = DestinationAdapter(this, destinations)
-
-        // Set the adapter to the spinner
         destination.adapter = adapter
 
         placeholderText.setOnClickListener {
             destination.performClick()
         }
-    }
 
+        manualtransfer.setOnClickListener {
+
+        }
+    }
 }

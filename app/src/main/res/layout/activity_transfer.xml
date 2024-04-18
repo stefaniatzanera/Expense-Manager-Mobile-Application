@@ -22,21 +22,47 @@
         android:layout_marginBottom="480dp"
     />
 
-
-    <TextView
-        android:id="@+id/from"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/from"
-        android:textColor="@color/white"
-        android:textSize="28sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="280dp"
         android:layout_marginBottom="480dp"
+        android:orientation="horizontal">
+        <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/from"
+        android:textColor="@color/white"
+        android:textSize="28sp"
         />
+        <View
+            android:id="@+id/space"
+            android:layout_width="140dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+        <TextView
+            android:id="@+id/amountto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            />
+        <TextView
+            android:id="@+id/currencyamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
