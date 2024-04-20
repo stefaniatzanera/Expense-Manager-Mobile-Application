@@ -102,6 +102,10 @@
     <!---layout_for_delete-->
     <string name="delete">Delete</string>
     <string name="areyousure">Αre you sure you want to delete \"%s\" ?</string>
+    <!---layout_for_delete_all_data-->
+    <string name="deletealldata">Are you sure you want to delete all data?</string>
+    <!---layout_for_delete_one_data-->
+    <string name="deleteonedata2">Select which one to delete</string>
     <!---futuresplans-->
     <string name="cexchange">Currency Exchange</string>
     <string name="cexchangedesc">Currency conversion will be allowed based on the rates they have at that time!</string>

@@ -1,7 +1,10 @@
 package com.example.expensemanagermobileapplication.activities
 
+import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +13,9 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.expensemanagermobileapplication.R
+import com.example.expensemanagermobileapplication.dataClass.DestinationItem
 import com.example.expensemanagermobileapplication.databinding.ActivitySettingsBinding
+import java.lang.System.exit
 
 class SettingsActivity : AppCompatActivity() {
     //user data
@@ -33,7 +38,11 @@ class SettingsActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_settings)
 
         val binding = DataBindingUtil.setContentView<ActivitySettingsBinding>(this,R.layout.activity_settings)
+        val dialog = Dialog(this)
+        val sp = getSharedPreferences("userOptions", MODE_PRIVATE)
+        val editor = sp.edit()
 
+        //user data
         addcardbtn.setOnClickListener {
             val x = Intent(this, AddCardActivity::class.java)
             startActivity(x)
@@ -44,6 +53,32 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(y)
         }
 
+        deleteonebtn.setOnClickListener {
+
+        }
+
+        deleteallbtn.setOnClickListener{
+            dialog.setContentView(R.layout.layout_for_delete_all_data)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val deletebtn = dialog.findViewById<Button>(R.id.delete)
+            val cancelbtn = dialog.findViewById<Button>(R.id.cancelbtn)
+
+            deletebtn.setOnClickListener {
+                editor.clear()
+                editor.apply()
+            }
+
+            cancelbtn.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.setCancelable(true)
+            dialog.show()
+        }
+        //energies
+
+        //about expense manager
         ratebtn.setOnClickListener{
                 try {
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.zestas.cryptmyfiles")))
