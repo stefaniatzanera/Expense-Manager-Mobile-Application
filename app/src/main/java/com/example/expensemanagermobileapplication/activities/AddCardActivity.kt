@@ -77,9 +77,7 @@ class AddCardActivity : AppCompatActivity() {
                 parent: AdapterView<*>,
                 view: View, position: Int, id: Long
             ) {
-                if(!userInteraction)
-                    userInteraction = true
-                else
+                if (position != 0)
                     placeholderTextView.text = currencies[position]
             }
 

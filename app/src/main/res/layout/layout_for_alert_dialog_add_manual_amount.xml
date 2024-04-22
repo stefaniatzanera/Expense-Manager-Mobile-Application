@@ -28,6 +28,7 @@
             android:background="@drawable/roundbtn"
             android:padding="10dp"
             android:layout_marginBottom="14dp"
+            android:inputType="number"
             android:hint="@string/enteranamount"
             android:maxLength="10"
             android:textColor="@color/white"

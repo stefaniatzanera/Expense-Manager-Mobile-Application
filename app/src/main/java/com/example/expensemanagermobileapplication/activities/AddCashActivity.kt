@@ -79,7 +79,7 @@ class AddCashActivity : AppCompatActivity() {
             ) {
                 if(!userInteraction)
                     userInteraction = true
-                else
+                if (position != 0)
                     placeholderTextView.text = currencies[position]
             }
 

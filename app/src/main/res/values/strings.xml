@@ -14,6 +14,7 @@
     <string name="create_card_btn">Create</string>
     <string name="currency_title">Click to select currency</string>
     <string-array name="Currencies">
+        <item> </item>
         <item>Euro €</item>
         <item>US dollar $</item>
         <item>Canadian dollar $</item>
@@ -53,6 +54,8 @@
     <string name="cancelbtn">Cancel</string>
     <!---Add-Btn-Activity-->
     <string name="addbtntitle">Add money in: %s</string>
+    <string name="inamount">%s</string>
+    <string name="curamount">%s</string>
     <!---Substraction-Btn-Activity-->
     <string name="substractionbtntitle">Substract money from: %s</string>
     <!---Settings-Activity-->

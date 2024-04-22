@@ -67,6 +67,10 @@ class SettingsActivity : AppCompatActivity() {
             deletebtn.setOnClickListener {
                 editor.clear()
                 editor.apply()
+                dialog.dismiss()
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
 
             cancelbtn.setOnClickListener {

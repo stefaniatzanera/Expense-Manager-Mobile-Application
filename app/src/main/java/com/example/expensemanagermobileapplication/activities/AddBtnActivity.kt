@@ -64,7 +64,7 @@ class AddBtnActivity : AppCompatActivity() {
                 if (activity == null || activity.isFinishing)
                     return
             }
-        }
+           }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

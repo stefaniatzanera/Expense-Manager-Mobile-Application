@@ -9,12 +9,11 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userimage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_centerInParent="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
         android:layout_marginStart="40dp"
         android:layout_marginTop="100dp"
         />
@@ -25,39 +24,24 @@
         android:layout_height="wrap_content"
         android:text="@string/hellotxt"
         android:textColor="@color/white"
-        android:textSize="28sp"
-        android:layout_marginStart="20dp"
+        android:textSize="24sp"
+        android:layout_marginStart="10dp"
         app:layout_constraintLeft_toRightOf="@id/userimage"
         app:layout_constraintTop_toTopOf="@id/userimage"
         app:layout_constraintBottom_toBottomOf="@id/userimage"/>
 
-    <TextView
-        android:id="@+id/language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/english"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintRight_toLeftOf="@+id/settingsbtn"
-        app:layout_constraintLeft_toRightOf="@id/hello_txt"
-        app:layout_constraintTop_toTopOf="@id/hello_txt"
-        app:layout_constraintBottom_toBottomOf="@id/hello_txt"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="140dp"
-        android:padding="20dp"
-    />
-
     <ImageButton
         android:id="@+id/settingsbtn"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@null"
-        app:layout_constraintLeft_toRightOf="@id/hello_txt"
-        app:layout_constraintTop_toTopOf="@id/hello_txt"
-        app:layout_constraintBottom_toBottomOf="@id/hello_txt"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="140dp"/>
+        android:src="@drawable/settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="600dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/money"

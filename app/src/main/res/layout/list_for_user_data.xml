@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="buttonname" type="java.lang.String"/>
+        <variable name="buttonamount" type="java.lang.String"/>
+        <variable name="buttoncurrency" type="java.lang.String"/>
+    </data>
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/textViewItem"
     android:layout_width="300dp"
@@ -19,7 +25,8 @@
         android:layout_weight="1"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="@{buttonname}"/>
 
     <View
         android:id="@+id/space"
@@ -34,7 +41,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="@{buttonamount}"/>
 
     <TextView
         android:id="@+id/currency"
@@ -42,6 +50,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="@{buttoncurrency}"/>
 
 </LinearLayout>
+</layout>
