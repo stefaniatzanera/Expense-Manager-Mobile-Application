@@ -62,8 +62,9 @@ class AddCashActivity : AppCompatActivity() {
             }
             editor.apply()
 
-            Toast.makeText(this@AddCashActivity, "Wallet added successfully!", Toast.LENGTH_LONG)
-                .show()
+            Toast.makeText(this@AddCashActivity, "Wallet added successfully!", Toast.LENGTH_LONG).show()
+            spinner.setSelection(0)
+            placeholderTextView.text = getString(R.string.currency_title)
             showCreateCashDialog()
         }
 

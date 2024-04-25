@@ -53,11 +53,13 @@
     <string name="okbtn">OK</string>
     <string name="cancelbtn">Cancel</string>
     <!---Add-Btn-Activity-->
-    <string name="addbtntitle">Add money in: %s</string>
+    <string name="addbtntitle">Add money in:</string>
+    <string name="nameofdata2">%s</string>
     <string name="inamount">%s</string>
     <string name="curamount">%s</string>
     <!---Substraction-Btn-Activity-->
-    <string name="substractionbtntitle">Substract money from: %s</string>
+    <string name="substractionbtntitle">Substract money from:</string>
+    <string name="nameofdata">%s</string>
     <!---Settings-Activity-->
     <string name="userdatattl">User Data</string>
     <string name="addcarddesc">You can add a new card and choose the currency! </string>
@@ -93,6 +95,8 @@
     <string name="greek">GR</string>
     <string name="addamount">Add money</string>
     <string name="subtractamount">Subtract money</string>
+    <string name="amount">Amount:</string>
+    <string name="currencydata">Currency:</string>
     <!---Transfer-Activity-->
     <string name="transferfrom">Transfer money from:</string>
     <string name="from">%s</string>
@@ -122,4 +126,5 @@
     <string name="iosdesc">It will soon be implemented for ios devices!</string>
     <string name="todolist">TODO list</string>
     <string name="todolistdesc">A list like a notebook!</string>
+    <!---delete-one-data-->
 </resources>

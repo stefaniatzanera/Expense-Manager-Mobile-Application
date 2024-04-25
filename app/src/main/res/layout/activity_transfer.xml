@@ -10,17 +10,18 @@
 
     <TextView
         android:id="@+id/transferttl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/transferfrom"
         android:textColor="@color/white"
         android:textSize="28sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colors_btn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="480dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:padding="10dp"
     />
 
     <LinearLayout
@@ -30,7 +31,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="160dp"
         android:layout_marginBottom="480dp"
         android:background="@drawable/roundbtn"
         android:padding="10dp"
@@ -42,6 +43,7 @@
             android:text="@string/from"
             android:textColor="@color/white"
             android:textSize="20sp"
+            android:textStyle="bold"
             />
         <View
             android:id="@+id/space"
@@ -54,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/from"
+            android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="20sp"
             />
@@ -61,6 +64,7 @@
             android:id="@+id/currencyamount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="@string/from"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -68,7 +72,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/destinationspinner"
@@ -78,35 +82,21 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="40dp">
-<!--        <TextView-->
-<!--            android:id="@+id/placeholder"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/clicktoselect"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:background="@drawable/roundbtn"-->
-<!--            android:layout_marginLeft="40dp"-->
-<!--            android:layout_marginRight="40dp"-->
-<!--            android:padding="10dp"-->
-<!--            android:textSize="20sp"/>-->
             <include
                 android:id="@+id/destinationplaceholder"
                 layout="@layout/list_for_user_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp"
+                android:layout_margin="20dp"
             />
             <Spinner
                 android:id="@+id/selectdestination"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:spinnerMode="dialog"
                 android:visibility="invisible"
-                android:prompt="@string/select_destination_placeholder"
-                android:textColor="@color/white"
-                tools:listitem="@layout/spinner_bankwallet_data"
+                android:prompt="@string/clicktoselect"
+                android:theme="@style/SpinnerDialogTransfer"
                 android:background="@null"
                 />
     </LinearLayout>

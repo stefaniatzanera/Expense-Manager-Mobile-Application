@@ -83,45 +83,45 @@
                 app:buttonTitle="@{@string/deleteall}"
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/energies"
-                android:textColor="@color/colors_btn"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                android:layout_marginStart="20dp"
-                />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/energies"-->
+<!--                android:textColor="@color/colors_btn"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="italic"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                />-->
 
-            <include
-                android:id="@+id/addmoneybtn"
-                layout="@layout/layout_for_buttons_for_settings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:buttonDescription="@{@string/addmoneydesc}"
-                app:buttonImage="@{@drawable/addmoney}"
-                app:buttonTitle="@{@string/addmoney}"
-                />
+<!--            <include-->
+<!--                android:id="@+id/addmoneybtn"-->
+<!--                layout="@layout/layout_for_buttons_for_settings"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:buttonDescription="@{@string/addmoneydesc}"-->
+<!--                app:buttonImage="@{@drawable/addmoney}"-->
+<!--                app:buttonTitle="@{@string/addmoney}"-->
+<!--                />-->
 
-            <include
-                android:id="@+id/submoneybtn"
-                layout="@layout/layout_for_buttons_for_settings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:buttonDescription="@{@string/submoneydesc}"
-                app:buttonImage="@{@drawable/submoney}"
-                app:buttonTitle="@{@string/submoney}"
-                />
+<!--            <include-->
+<!--                android:id="@+id/submoneybtn"-->
+<!--                layout="@layout/layout_for_buttons_for_settings"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:buttonDescription="@{@string/submoneydesc}"-->
+<!--                app:buttonImage="@{@drawable/submoney}"-->
+<!--                app:buttonTitle="@{@string/submoney}"-->
+<!--                />-->
 
-            <include
-                android:id="@+id/transfermoneybtn"
-                layout="@layout/layout_for_buttons_for_settings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:buttonDescription="@{@string/transfermoneydesc}"
-                app:buttonImage="@{@drawable/transfermoney}"
-                app:buttonTitle="@{@string/transfermoney}"
-                />
+<!--            <include-->
+<!--                android:id="@+id/transfermoneybtn"-->
+<!--                layout="@layout/layout_for_buttons_for_settings"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:buttonDescription="@{@string/transfermoneydesc}"-->
+<!--                app:buttonImage="@{@drawable/transfermoney}"-->
+<!--                app:buttonTitle="@{@string/transfermoney}"-->
+<!--                />-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

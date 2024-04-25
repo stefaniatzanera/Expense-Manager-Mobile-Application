@@ -8,29 +8,36 @@
     android:layout_gravity="center"
     tools:context=".activities.DataActivity">
 
-    <ImageView
-        android:id="@+id/featureimage"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        app:layout_constraintRight_toLeftOf="@+id/nameofdata"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="340dp"
-        />
-
-    <TextView
-        android:id="@+id/nameofdata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="340dp" />
+        android:gravity="center"
+        android:layout_marginBottom="340dp">
+        <ImageView
+            android:id="@+id/featureimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@+id/nameofdata" />
+
+        <View
+            android:id="@+id/space"
+            android:layout_width="6dp"
+            android:layout_height="0dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/nameofdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/lldata"
@@ -47,33 +54,61 @@
         android:layout_marginBottom="100dp"
         android:background="@drawable/roundbtn">
 
-    <TextView
-        android:id="@+id/amountofdata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/nameofdata"
-        app:layout_constraintRight_toRightOf="@+id/nameofdata"
-        app:layout_constraintLeft_toLeftOf="@+id/nameofdata"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/amounttitle"
+                    android:text="@string/amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <View
+                    android:id="@+id/space2"
+                    android:layout_width="40dp"
+                    android:layout_height="0dp"
+                    android:visibility="invisible" />
+                <TextView
+                    android:id="@+id/amountofdata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"/>
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/currencydata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/amountofdata"
-        app:layout_constraintRight_toRightOf="@+id/amountofdata"
-        app:layout_constraintLeft_toLeftOf="@+id/amountofdata"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/currencytitle"
+                    android:text="@string/currencydata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <View
+                    android:id="@+id/space3"
+                    android:layout_width="40dp"
+                    android:layout_height="0dp"
+                    android:visibility="invisible" />
+                <TextView
+                android:id="@+id/currencydata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+            </LinearLayout>
 
-    />
+        />
 
     </LinearLayout>
 
@@ -198,7 +233,5 @@
         android:textSize="12sp"
         android:layout_marginRight="60dp"
         android:layout_marginBottom="34dp"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

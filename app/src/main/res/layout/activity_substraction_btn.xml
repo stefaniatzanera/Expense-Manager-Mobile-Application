@@ -8,29 +8,42 @@
     tools:context=".activities.AddCardActivity"
     >
 
-    <TextView
-        android:id="@+id/subbtntitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="6dp"
-        android:text="@string/substractionbtntitle"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:layout_marginBottom="400dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/colors_btn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/subbtntitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@string/substractionbtntitle"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+        <TextView
+            android:id="@+id/nameofdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textStyle="bold"
+            android:text="@string/nameofdata"
+            android:textColor="@color/white"
+            android:textSize="30sp"/>
+    </LinearLayout>
     <ImageButton
         android:id="@+id/qrbtn"
         android:src="@drawable/qr"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:padding="14dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="160dp"
         android:background="@drawable/roundbtn"
+        android:layout_marginEnd="180dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,8 +56,7 @@
         android:src="@drawable/sub"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="180dp"
         android:padding="14dp"
         android:background="@drawable/roundbtn"
         app:layout_constraintRight_toRightOf="parent"

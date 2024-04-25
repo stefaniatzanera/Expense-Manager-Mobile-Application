@@ -69,7 +69,7 @@ class SubstractionBtnActivity : AppCompatActivity() {
         setContentView(R.layout.activity_substraction_btn)
 
         val name = intent.getStringExtra("name")
-        title.text = getString(R.string.substractionbtntitle, name)
+        nameofdata.text = getString(R.string.nameofdata, name)
         val amount = intent.getFloatExtra("amount", 0f)
         val currency = intent.getStringExtra("currency")
         val keyString = intent.getStringExtra("key")!!

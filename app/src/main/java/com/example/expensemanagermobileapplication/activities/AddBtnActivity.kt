@@ -23,7 +23,7 @@ import java.lang.ref.WeakReference
 
 class AddBtnActivity : AppCompatActivity() {
     private val title by lazy { findViewById<TextView>(R.id.addbtntitle) }
-    private val nameofdata by lazy { findViewById<TextView>(R.id.nameofdata) }
+    private val nameofdata by lazy { findViewById<TextView>(R.id.nameofdata2) }
     val qrbtn by lazy { findViewById<ImageButton>(R.id.qrbtn) }
     val addbtn by lazy { findViewById<ImageButton>(R.id.addbtn) }
     val task = MyAsyncTask(this)
@@ -72,7 +72,7 @@ class AddBtnActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_btn)
 
         val name = intent.getStringExtra("name")
-        title.text = getString(R.string.addbtntitle, name)
+        nameofdata.text = getString(R.string.nameofdata, name)
         val amount = intent.getFloatExtra("amount", 0f)
         val currency = intent.getStringExtra("currency")
         val keyString = intent.getStringExtra("key")!!

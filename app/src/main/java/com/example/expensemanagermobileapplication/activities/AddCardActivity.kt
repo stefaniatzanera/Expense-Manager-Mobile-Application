@@ -62,8 +62,9 @@ class AddCardActivity : AppCompatActivity() {
             }
             editor.apply()
 
-            Toast.makeText(this@AddCardActivity, "Card added successfully!", Toast.LENGTH_LONG)
-                .show()
+            Toast.makeText(this@AddCardActivity, "Card added successfully!", Toast.LENGTH_LONG).show()
+            spinner.setSelection(0)
+            placeholderTextView.text = getString(R.string.currency_title)
             showCreateCardDialog()
         }
 
