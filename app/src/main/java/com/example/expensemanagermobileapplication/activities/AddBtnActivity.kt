@@ -1,5 +1,6 @@
 package com.example.expensemanagermobileapplication.activities
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
@@ -26,6 +27,7 @@ class AddBtnActivity : AppCompatActivity() {
     private val nameofdata by lazy { findViewById<TextView>(R.id.nameofdata2) }
     val qrbtn by lazy { findViewById<ImageButton>(R.id.qrbtn) }
     val addbtn by lazy { findViewById<ImageButton>(R.id.addbtn) }
+    val infobtn by lazy { findViewById<ImageButton>(R.id.info) }
     val task = MyAsyncTask(this)
 
     companion object {
@@ -67,6 +69,7 @@ class AddBtnActivity : AppCompatActivity() {
            }
     }
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_btn)
@@ -152,6 +155,20 @@ class AddBtnActivity : AppCompatActivity() {
             cancelbtn.setOnClickListener {
                 dialog.dismiss()
             }
+
+            dialog.setCancelable(true)
+            dialog.show()
+        }
+
+        infobtn.setOnClickListener{
+            dialog.setContentView(R.layout.layout_for_info)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val titleinfo = dialog.findViewById<TextView>(R.id.infotitle)
+            val descinfo = dialog.findViewById<TextView>(R.id.descriptioninfo)
+
+            titleinfo.text = getString(R.string.infoaddbtntlt)
+            descinfo.text = getString(R.string.infoaddbtndesc)
 
             dialog.setCancelable(true)
             dialog.show()

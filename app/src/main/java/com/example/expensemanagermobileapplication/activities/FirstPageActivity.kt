@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.View
 import android.view.animation.Animation
@@ -37,6 +38,7 @@ class FirstPageActivity : AppCompatActivity() {
     private val newnamebtn by lazy { findViewById<TextView>(R.id.hello_txt) }
     private val settingsbtn by lazy { findViewById<ImageView>(R.id.settingsbtn) }
     private val actionsbtn by lazy { findViewById<ImageButton>(R.id.actionsbtn) }
+    private val infobtn by lazy { findViewById<ImageButton>(R.id.info) }
     lateinit var binding: ActivityFirstPageBinding
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: BankAdapter
@@ -178,6 +180,20 @@ class FirstPageActivity : AppCompatActivity() {
         add_wallet_btn.setOnClickListener {
             val wallet = Intent(this, AddCashActivity::class.java)
             startActivity(wallet)
+        }
+
+        infobtn.setOnClickListener{
+            dialog.setContentView(R.layout.layout_for_info)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val titleinfo = dialog.findViewById<TextView>(R.id.infotitle)
+            val descinfo = dialog.findViewById<TextView>(R.id.descriptioninfo)
+
+            titleinfo.text = getString(R.string.infofirstpagetlt)
+            descinfo.text = getString(R.string.infofirstpagedesc)
+
+            dialog.setCancelable(true)
+            dialog.show()
         }
     }
 

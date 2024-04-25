@@ -20,6 +20,7 @@ class AddCashActivity : AppCompatActivity() {
     val createbtn by lazy { findViewById<Button>(R.id.createbtn) }
     val spinner by lazy { findViewById<Spinner>(R.id.currenciesoptions) }
     val placeholderTextView by lazy {findViewById<TextView>(R.id.placeholder) }
+    val infobtn by lazy { findViewById<ImageButton>(R.id.info) }
     lateinit var binding: ActivityAddCashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +47,7 @@ class AddCashActivity : AppCompatActivity() {
             val amountInWallet = amountofwallet.text.toString()
             val selectedCurrency = spinner.selectedItem.toString()
 
-            if(nameOfWallet == "" || amountInWallet == "" || selectedCurrency == "Please Select") {
+            if(nameOfWallet == "" || amountInWallet == "" || spinner.selectedItemPosition == 0) {
                 Toast.makeText(this@AddCashActivity, "Nothing selected!", Toast.LENGTH_LONG)
                     .show()
                 return@setOnClickListener
@@ -85,6 +86,21 @@ class AddCashActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {}
+        }
+
+        val dialog = Dialog(this)
+        infobtn.setOnClickListener{
+            dialog.setContentView(R.layout.layout_for_info)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val titleinfo = dialog.findViewById<TextView>(R.id.infotitle)
+            val descinfo = dialog.findViewById<TextView>(R.id.descriptioninfo)
+
+            titleinfo.text = getString(R.string.infoaddcashbtntlt)
+            descinfo.text = getString(R.string.infoaddcashbtndesc)
+
+            dialog.setCancelable(true)
+            dialog.show()
         }
     }
 

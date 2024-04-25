@@ -24,6 +24,7 @@ class SubstractionBtnActivity : AppCompatActivity() {
     private val nameofdata by lazy { findViewById<TextView>(R.id.nameofdata) }
     val qrbtn by lazy { findViewById<ImageButton>(R.id.qrbtn) }
     val subbtn by lazy { findViewById<ImageButton>(R.id.subbtn) }
+    val infobtn by lazy { findViewById<ImageButton>(R.id.info) }
     val task = SubstractionBtnActivity.Companion.MyAsyncTask(this)
 
     companion object {
@@ -83,27 +84,37 @@ class SubstractionBtnActivity : AppCompatActivity() {
                 val content = result.content
                 if (content is QRContent.Url) {
                     val url = content.url
-                    lifecycleScope.launch( context = Dispatchers.Main){
+                    lifecycleScope.launch(context = Dispatchers.Main) {
                         task.execute(url)
                     }
-                    lifecycleScope.launch( context = Dispatchers.Main){
+                    lifecycleScope.launch(context = Dispatchers.Main) {
                         val resp = task.get()
                         val enteredamount = resp.toFloatOrNull()
                         if (enteredamount == null) {
-                            Toast.makeText(this@SubstractionBtnActivity, "Something went wrong. Try manually!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this@SubstractionBtnActivity,
+                                "Something went wrong. Try manually!",
+                                Toast.LENGTH_SHORT
+                            ).show()
                             finish()
                             return@launch
                         }
-                        val res = subtracttheamount(enteredamount.toFloat(),amount)
+                        val res = amount - enteredamount.toFloat()
                         val editor = sp.edit()
                         if (feature == "w")
                             editor.putFloat("amount_in_wallet_$keyString", res)
                         else
                             editor.putFloat("amount_in_bank_$keyString", res)
                         editor.apply()
-                        Toast.makeText(this@SubstractionBtnActivity, "Removed: $enteredamount", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this@SubstractionBtnActivity, FirstPageActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        Toast.makeText(
+                            this@SubstractionBtnActivity,
+                            "Removed: $enteredamount",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        val intent =
+                            Intent(this@SubstractionBtnActivity, FirstPageActivity::class.java)
+                        intent.flags =
+                            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
                     }
                 }
@@ -122,7 +133,7 @@ class SubstractionBtnActivity : AppCompatActivity() {
             val amountofdata = dialog.findViewById<TextView>(R.id.availableamount)
             val currencydata = dialog.findViewById<TextView>(R.id.cur)
             amountofdata.text = getString(R.string.availableamount, amount.toString())
-            currencydata.text = getString(R.string.currency,currency)
+            currencydata.text = getString(R.string.currency, currency)
 
             val okaybtn = dialog.findViewById<Button>(R.id.subtract)
             val cancelbtn = dialog.findViewById<Button>(R.id.cancelbtn)
@@ -131,8 +142,8 @@ class SubstractionBtnActivity : AppCompatActivity() {
                 val enteranamount = dialog.findViewById<EditText>(R.id.enteranamount)
                 val enteredamount = enteranamount.text.toString() // the amount which user entered
                 amountofdata.text = getString(R.string.availableamount, amount.toString())
-                currencydata.text = getString(R.string.currency,currencydata)
-                val res = subtracttheamount(enteredamount.toFloat(),amount)
+                currencydata.text = getString(R.string.currency, currencydata)
+                val res = amount - enteredamount.toFloat()
                 val editor = sp.edit()
                 if (feature == "w")
                     editor.putFloat("amount_in_wallet_$keyString", res)
@@ -140,7 +151,8 @@ class SubstractionBtnActivity : AppCompatActivity() {
                     editor.putFloat("amount_in_bank_$keyString", res)
                 editor.apply()
 
-                Toast.makeText(this@SubstractionBtnActivity, "result = $res", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@SubstractionBtnActivity, "result = $res", Toast.LENGTH_LONG)
+                    .show()
                 dialog.dismiss()
                 val intent = Intent(this@SubstractionBtnActivity, FirstPageActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -153,14 +165,19 @@ class SubstractionBtnActivity : AppCompatActivity() {
             dialog.setCancelable(true)
             dialog.show()
         }
-    }
 
-    private fun subtracttheamount(enteredamount : Float, existedamount : Float): Float {
-        val result = existedamount - enteredamount
-        return if (result >= 0) {
-            result // Update existedAmount only if result is non-negative
-        } else {
-            existedamount // Keep existedAmount unchanged if result is negative
+        infobtn.setOnClickListener{
+            dialog.setContentView(R.layout.layout_for_info)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val titleinfo = dialog.findViewById<TextView>(R.id.infotitle)
+            val descinfo = dialog.findViewById<TextView>(R.id.descriptioninfo)
+
+            titleinfo.text = getString(R.string.infosubbtntlt)
+            descinfo.text = getString(R.string.infosubbtndesc)
+
+            dialog.setCancelable(true)
+            dialog.show()
         }
     }
 }

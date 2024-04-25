@@ -20,13 +20,12 @@ class AddCardActivity : AppCompatActivity() {
     val createbtn by lazy { findViewById<Button>(R.id.createbtn) }
     val spinner by lazy { findViewById<Spinner>(R.id.currenciesoptions) }
     val placeholderTextView by lazy {findViewById<TextView>(R.id.placeholder) }
+    val infobtn by lazy { findViewById<ImageButton>(R.id.info) }
     lateinit var binding: ActivityAddCardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_card)
-
-        var userInteraction = false
 
         val currencies = resources.getStringArray(R.array.Currencies)
 
@@ -46,7 +45,7 @@ class AddCardActivity : AppCompatActivity() {
             val amountInBank = amountofbankcard.text.toString()
             val selectedCurrency = spinner.selectedItem.toString()
 
-            if (nameOfBank == "" || amountInBank == "" || selectedCurrency == "Please Select") {
+            if (nameOfBank == "" || amountInBank == "" || spinner.selectedItemPosition == 0) {
                 Toast.makeText(this@AddCardActivity, "Nothing selected!", Toast.LENGTH_LONG)
                     .show()
                 return@setOnClickListener
@@ -83,6 +82,21 @@ class AddCardActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {}
+        }
+
+        val dialog = Dialog(this)
+        infobtn.setOnClickListener{
+            dialog.setContentView(R.layout.layout_for_info)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val titleinfo = dialog.findViewById<TextView>(R.id.infotitle)
+            val descinfo = dialog.findViewById<TextView>(R.id.descriptioninfo)
+
+            titleinfo.text = getString(R.string.infoaddcardbtntlt)
+            descinfo.text = getString(R.string.infoaddcardbtndesc)
+
+            dialog.setCancelable(true)
+            dialog.show()
         }
     }
 

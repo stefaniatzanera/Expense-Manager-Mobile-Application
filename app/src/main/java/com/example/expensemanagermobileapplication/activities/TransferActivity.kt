@@ -33,6 +33,7 @@ class TransferActivity : AppCompatActivity() {
     val qr by lazy { findViewById<ImageButton>(R.id.qrbtn) }
     val destinationLayout by lazy { findViewById<LinearLayout>(R.id.destinationplaceholder) }
     val manualtransfer by lazy { findViewById<ImageButton>(R.id.manualtransferbtn) }
+    val infobtn by lazy { findViewById<ImageView>(R.id.info) }
     private lateinit var sp: SharedPreferences
     private lateinit var activityTransferBinding: ActivityTransferBinding
     val task = TransferActivity.Companion.MyAsyncTask(this)
@@ -152,6 +153,10 @@ class TransferActivity : AppCompatActivity() {
 
         val dialog = Dialog(this)
         manualtransfer.setOnClickListener{
+            if (destination.selectedItemPosition == 0) {
+                Toast.makeText(this@TransferActivity, "Nothing Selected!", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
             dialog.setContentView(R.layout.layout_for_manual_transfering)
             dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -254,5 +259,18 @@ class TransferActivity : AppCompatActivity() {
             scanQrCodeLauncher.launch(null)
         }
 
+        infobtn.setOnClickListener{
+            dialog.setContentView(R.layout.layout_for_info)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            val titleinfo = dialog.findViewById<TextView>(R.id.infotitle)
+            val descinfo = dialog.findViewById<TextView>(R.id.descriptioninfo)
+
+            titleinfo.text = getString(R.string.infotransferbtntlt)
+            descinfo.text = getString(R.string.infotransferbtndesc)
+
+            dialog.setCancelable(true)
+            dialog.show()
+        }
     }
 }

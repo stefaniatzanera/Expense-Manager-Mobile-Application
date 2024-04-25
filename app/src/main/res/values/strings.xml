@@ -27,6 +27,16 @@
     <!---add_card_Activity & add_cash_Activity-->
     <string name="choose_action">Choose action</string>
     <string name="continue_with_app">Continue with app</string>
+    <string name="infoaddcardbtntlt">Add card action info</string>
+    <string name="infoaddcardbtndesc">In this activity you can create a card or bank. \n
+        It is recommended not to give the same name as other items, otherwise you can add a number next to the name for your convenience.\n
+        (The name can be up to 10 characters) \n
+        <b>ATTENTION</b> You must fill all the fields to create a card!</string>
+    <string name="infoaddcashbtntlt">Add wallet action info</string>
+    <string name="infoaddcashbtndesc">In this activity you can create a wallet. \n
+        It is recommended not to give the same name as other items, otherwise you can add a number next to the name for your convenience.\n
+        (The name can be up to 10 characters) \n
+        <b>ATTENTION</b> You must fill all the fields to create a wallet!</string>
     <!--- add_cash_Activity-->
     <string name="title_new_wallet">Create wallet for cash</string>
     <string name="name_of_wallet">Name of wallet</string>
@@ -48,6 +58,15 @@
     <string name="addcard">Add new card/bank</string>
     <string name="addwallet">Add new wallet</string>
     <string name="deletedata">Delete data</string>
+    <string name="infofirstpagetlt">App info</string>
+    <string name="infofirstpagedesc">In this activity you can create a wallet. \n
+        In this Activity you can view the data you have created.\n
+        To see in detail click on the one you are interested in. \n
+        To manipulate them, you need to enter them. \n
+        On this page you can create new objects. \n
+        You can change both the image and the name. \n
+        By clicking on the EN button you can change the language.\n
+        By tapping on the gear button you can find some additional settings.</string>
     <!---layout_for_alert_dialog_newname-->
     <string name="newname">Enter a name</string>
     <string name="okbtn">OK</string>
@@ -57,9 +76,19 @@
     <string name="nameofdata2">%s</string>
     <string name="inamount">%s</string>
     <string name="curamount">%s</string>
+    <string name="infoaddbtntlt">Add action info</string>
+    <string name="infoaddbtndesc">In this activity you can add a certain amount of money. There are two possibilities: \n
+                                    1)<b>Qr</b>: You can scan a receipt and the application will add the amount. \n
+                                    2)<b>Add manually</b>:You can manually add the amount you want and it will be added. \n
+        <b>ATTENTION</b> QR only works with Internet access and greek receipts!</string>
     <!---Substraction-Btn-Activity-->
     <string name="substractionbtntitle">Substract money from:</string>
     <string name="nameofdata">%s</string>
+    <string name="infosubbtntlt">Subtraction action info</string>
+    <string name="infosubbtndesc">In this activity you can subtract a certain amount of money. There are two possibilities: \n
+                                    1)<b>Qr</b>: You can scan a receipt and the application will subtract the amount. \n
+                                    2)<b>Subtract manually</b>:You can manually subtract the amount you want and it will be subtracted. \n
+        <b>ATTENTION</b> QR only works with Internet access and greek receipts!</string>
     <!---Settings-Activity-->
     <string name="userdatattl">User Data</string>
     <string name="addcarddesc">You can add a new card and choose the currency! </string>
@@ -106,6 +135,11 @@
     <string name="clicktoselect">Click to select destination</string>
     <string name="amountintrans">%s</string>
     <string name="currencyamount">%s</string>
+    <string name="infotransferbtntlt">Transfer action info</string>
+    <string name="infotransferbtndesc">In this activity you can transfer a certain amount of money. There are two possibilities: \n
+                                    1)<b>Qr</b>: You can scan a receipt and the application will transfer the amount in the destination you specified. \n
+                                    2)<b>Transfer manually</b>:You can manually give the amount and it will be tranfered. \n
+        <b>ATTENTION</b> QR only works with Internet access and greek receipts!</string>
     <!---layout_for_delete-->
     <string name="delete">Delete</string>
     <string name="areyousure">Αre you sure you want to delete \"%s\" ?</string>
