@@ -5,6 +5,7 @@ In this application the user can manage his finances without access to banking s
 
 # Download
 
+Download Expense Manager from Google Play.
 <div align="center">
 <a href=''><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 </div>
