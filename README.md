@@ -11,15 +11,15 @@ In this application the user can manage his finances without access to banking s
 
 # Screenshots
 
-![](./screenshots/1.jpg)
-![](./screenshots/2.jpg)
-![](./screenshots/3.jpg)
-![](./screenshots/4.jpg)
-![](./screenshots/5.jpg)
-![](./screenshots/6.jpg)
-![](./screenshots/7.jpg)
-![](./screenshots/8.jpg)
-![](./screenshots/9.jpg)
-![](./screenshots/10.jpg)
-![](./screenshots/11.jpg)
+![](./screanshots/1.jpg)
+![](./screanshots/2.jpg)
+![](./screanshots/3.jpg)
+![](./screanshots/4.jpg)
+![](./screanshots/5.jpg)
+![](./screanshots/6.jpg)
+![](./screanshots/7.jpg)
+![](./screanshots/8.jpg)
+![](./screanshots/9.jpg)
+![](./screanshots/10.jpg)
+![](./screanshots/11.jpg)
 
