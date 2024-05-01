@@ -21,6 +21,8 @@ import kotlinx.coroutines.launch
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
 import java.lang.ref.WeakReference
+import java.math.RoundingMode
+import java.math.BigDecimal
 
 class AddBtnActivity : AppCompatActivity() {
     private val title by lazy { findViewById<TextView>(R.id.addbtntitle) }
@@ -100,7 +102,7 @@ class AddBtnActivity : AppCompatActivity() {
                             finish()
                             return@launch
                         }
-                        val res = addtheamount(enteredamount.toFloat(),amount)
+                        val res = amount + enteredamount.toFloat()
                         val editor = sp.edit()
                         if (feature == "w")
                             editor.putFloat("amount_in_wallet_$keyString", res)
@@ -138,7 +140,7 @@ class AddBtnActivity : AppCompatActivity() {
                 val enteredamount = enteranamount.text.toString() // the amount which user entered
                 amountofdata.text = getString(R.string.availableamount, amount.toString())
                 currencydata.text = getString(R.string.currency,currencydata)
-                val res = addtheamount(enteredamount.toFloat(),amount)
+                val res = amount + enteredamount.toFloat()
                 val editor = sp.edit()
                 if (feature == "w")
                     editor.putFloat("amount_in_wallet_$keyString", res)
@@ -172,15 +174,6 @@ class AddBtnActivity : AppCompatActivity() {
 
             dialog.setCancelable(true)
             dialog.show()
-        }
-    }
-
-    private fun addtheamount(enteredamount : Float, existedamount : Float): Float {
-        val result = existedamount + enteredamount
-        return if (result >= 0) {
-            result // Update existedAmount only if result is non-negative
-        } else {
-            existedamount // Keep existedAmount unchanged if result is negative
         }
     }
 }
